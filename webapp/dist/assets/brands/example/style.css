@@ -1,0 +1,25 @@
+:root {
+	/** Main Base Colors **/
+	--base-color: #e20000;
+	--base-color-light: #6d0202;
+	--secondary-color: #e20000;
+	--secondary-color-dark: #9c0202;
+	--main-bg-color: #eee;
+	/** Login Page **/
+	--login-card-color: #333;
+	--login-card-background: #fff;
+	/** Header **/
+	--header-background: #f6f6f6;
+	--header-color: #333;
+	--header-background-image: none;
+	/** Main menu **/
+	--mainmenu-background: black;
+	--mainmenu-color: #fff;
+	--mainmenu-item-background-hover: #1f1f1f;
+	--mainmenu-item-background-active: #2d2d2d;
+	--mainmenu-parentitem-background-active: #151414;
+	--mainmenu-item-color-active: #fff;
+	/** Outline **/
+	--element-focus-border-color: #536dfe;
+	--element-focus-boxshadow-color: #ccc;
+}

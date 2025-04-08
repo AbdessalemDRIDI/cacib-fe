@@ -1,0 +1,171 @@
+{
+  "name": "partner-view",
+  "featureName": "partner",
+  "title": "View",
+  "showTitle": true,
+  "template": "view",
+  "componentsBreakpoints": {
+    "xs": 12,
+    "sm": 12,
+    "md": 6,
+    "lg": 4
+  },
+  "components": [
+    {
+      "name": "id",
+      "type": "Label",
+      "properties": {
+        "label": "Id"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "alias",
+      "type": "Label",
+      "properties": {
+        "label": "Alias"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "type",
+      "type": "Label",
+      "properties": {
+        "label": "Type"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "direction",
+      "type": "Label",
+      "properties": {
+        "label": "Direction"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "application",
+      "type": "Label",
+      "properties": {
+        "label": "Application"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "processedFlowType",
+      "type": "Label",
+      "properties": {
+        "label": "Processed Flow Type"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "description",
+      "type": "Label",
+      "properties": {
+        "label": "Description"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "type": "Button",
+      "properties": {
+        "verticalAlignment": "none",
+        "visibleCondition": {
+          "hideColumn": false
+        },
+        "additionalAttributes": [
+          {
+            "type": "static"
+          }
+        ],
+        "label": "Back",
+        "icon": "pi pi-arrow-left",
+        "iconDirection": "left",
+        "template": "cancel"
+      },
+      "name": "back"
+    },
+    {
+      "type": "Button",
+      "properties": {
+        "verticalAlignment": "none",
+        "visibleCondition": {
+          "hideColumn": false
+        },
+        "additionalAttributes": [
+          {
+            "type": "static"
+          }
+        ],
+        "label": "Modify",
+        "template": "edit",
+        "icon": "pi pi-eye",
+        "iconDirection": "left",
+        "screens": [
+          {
+            "navigationType": "forward",
+            "path": "/partner/partner-edit"
+          }
+        ],
+        "position": "top"
+      },
+      "name": "edit"
+    }
+  ],
+  "modelName": "Partner",
+  "getInstanceByIdService": {
+    "url": "/partners/{code}",
+    "httpMethod": "GET",
+    "params": [
+      {
+        "param": "keys",
+        "type": "Static",
+        "value": "$keys"
+      },
+      {
+        "param": "code",
+        "paramType": "Path param",
+        "type": "Path param",
+        "value": "id"
+      }
+    ]
+  }
+}

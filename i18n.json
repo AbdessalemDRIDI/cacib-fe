@@ -1,0 +1,1269 @@
+{
+  "features": {
+    "message": {
+      "message-edit": {
+        "modelName": "Message",
+        "__attributes": {
+          "title_part1": {
+            "value": "Edit ",
+            "en": ""
+          }
+        },
+        "__actions": {
+          "cancel": {
+            "label": {
+              "value": "Cancel",
+              "en": ""
+            }
+          },
+          "save": {
+            "label": {
+              "value": "Save",
+              "en": ""
+            }
+          }
+        },
+        "id": {
+          "label": {
+            "value": "Id",
+            "en": ""
+          }
+        },
+        "messageContent": {
+          "label": {
+            "value": "Message Content",
+            "en": ""
+          }
+        },
+        "messageType": {
+          "label": {
+            "value": "Message Type",
+            "en": ""
+          }
+        },
+        "dateReceived": {
+          "label": {
+            "value": "Date Received",
+            "en": ""
+          }
+        },
+        "status": {
+          "label": {
+            "value": "Status",
+            "en": ""
+          }
+        }
+      },
+      "message-search": {
+        "modelName": "Message",
+        "__attributes": {
+          "title_part1": {
+            "value": "List of Messages ",
+            "en": ""
+          }
+        },
+        "__actions": {
+          "create": {
+            "label": {
+              "value": "Create",
+              "en": ""
+            }
+          },
+          "export": {
+            "label": {
+              "value": "Export",
+              "en": ""
+            }
+          }
+        },
+        "id": {
+          "label": {
+            "value": "Id",
+            "en": ""
+          }
+        },
+        "messageContent": {
+          "label": {
+            "value": "Message Content",
+            "en": ""
+          }
+        },
+        "messageType": {
+          "label": {
+            "value": "Message Type",
+            "en": ""
+          }
+        },
+        "dateReceived": {
+          "label": {
+            "value": "Date Received",
+            "en": ""
+          }
+        },
+        "status": {
+          "label": {
+            "value": "Status",
+            "en": ""
+          }
+        },
+        "container55038": {
+          "label": {
+            "value": "Actions",
+            "en": ""
+          }
+        },
+        "edit": {
+          "label": {
+            "value": "Edit",
+            "en": ""
+          }
+        },
+        "view": {
+          "label": {
+            "value": "View",
+            "en": ""
+          }
+        },
+        "delete": {
+          "label": {
+            "value": "Delete",
+            "en": ""
+          }
+        }
+      },
+      "message-search-input": {
+        "modelName": "Message",
+        "__attributes": {
+          "title_part1": {
+            "value": "Search Message ",
+            "en": ""
+          }
+        },
+        "id": {
+          "label": {
+            "value": "Id",
+            "en": ""
+          }
+        },
+        "messageContent": {
+          "label": {
+            "value": "Message Content",
+            "en": ""
+          }
+        },
+        "messageType": {
+          "label": {
+            "value": "Message Type",
+            "en": ""
+          }
+        },
+        "moreFilters": {
+          "label": {
+            "value": "More filters",
+            "en": ""
+          }
+        },
+        "dateReceived": {
+          "label": {
+            "value": "Date Received",
+            "en": ""
+          }
+        },
+        "status": {
+          "label": {
+            "value": "Status",
+            "en": ""
+          }
+        }
+      },
+      "message-view": {
+        "modelName": "Message",
+        "__attributes": {
+          "title_part1": {
+            "value": "View ",
+            "en": ""
+          }
+        },
+        "__actions": {
+          "back": {
+            "label": {
+              "value": "Back",
+              "en": ""
+            }
+          },
+          "edit": {
+            "label": {
+              "value": "Modify",
+              "en": ""
+            }
+          }
+        },
+        "id": {
+          "label": {
+            "value": "Id",
+            "en": ""
+          }
+        },
+        "messageContent": {
+          "label": {
+            "value": "Message Content",
+            "en": ""
+          }
+        },
+        "messageType": {
+          "label": {
+            "value": "Message Type",
+            "en": ""
+          }
+        },
+        "dateReceived": {
+          "label": {
+            "value": "Date Received",
+            "en": ""
+          }
+        },
+        "status": {
+          "label": {
+            "value": "Status",
+            "en": ""
+          }
+        }
+      }
+    },
+    "partner": {
+      "partner-edit": {
+        "modelName": "Partner",
+        "__attributes": {
+          "title_part1": {
+            "value": "Edit ",
+            "en": ""
+          }
+        },
+        "__actions": {
+          "cancel": {
+            "label": {
+              "value": "Cancel",
+              "en": ""
+            }
+          },
+          "save": {
+            "label": {
+              "value": "Save",
+              "en": ""
+            }
+          }
+        },
+        "id": {
+          "label": {
+            "value": "Id",
+            "en": ""
+          }
+        },
+        "alias": {
+          "label": {
+            "value": "Alias",
+            "en": ""
+          }
+        },
+        "type": {
+          "label": {
+            "value": "Type",
+            "en": ""
+          }
+        },
+        "direction": {
+          "label": {
+            "value": "Direction",
+            "en": ""
+          }
+        },
+        "application": {
+          "label": {
+            "value": "Application",
+            "en": ""
+          }
+        },
+        "processedFlowType": {
+          "label": {
+            "value": "Processed Flow Type",
+            "en": ""
+          }
+        },
+        "description": {
+          "label": {
+            "value": "Description",
+            "en": ""
+          }
+        }
+      },
+      "partner-search": {
+        "modelName": "Partner",
+        "__attributes": {
+          "title_part1": {
+            "value": "List of Partners ",
+            "en": ""
+          }
+        },
+        "__actions": {
+          "create": {
+            "label": {
+              "value": "Create",
+              "en": ""
+            }
+          },
+          "export": {
+            "label": {
+              "value": "Export",
+              "en": ""
+            }
+          }
+        },
+        "id": {
+          "label": {
+            "value": "Id",
+            "en": ""
+          }
+        },
+        "alias": {
+          "label": {
+            "value": "Alias",
+            "en": ""
+          }
+        },
+        "type": {
+          "label": {
+            "value": "Type",
+            "en": ""
+          }
+        },
+        "direction": {
+          "label": {
+            "value": "Direction",
+            "en": ""
+          }
+        },
+        "application": {
+          "label": {
+            "value": "Application",
+            "en": ""
+          }
+        },
+        "processedFlowType": {
+          "label": {
+            "value": "Processed Flow Type",
+            "en": ""
+          }
+        },
+        "description": {
+          "label": {
+            "value": "Description",
+            "en": ""
+          }
+        },
+        "container55038": {
+          "label": {
+            "value": "Actions",
+            "en": ""
+          }
+        },
+        "edit": {
+          "label": {
+            "value": "Edit",
+            "en": ""
+          }
+        },
+        "view": {
+          "label": {
+            "value": "View",
+            "en": ""
+          }
+        },
+        "delete": {
+          "label": {
+            "value": "Delete",
+            "en": ""
+          }
+        }
+      },
+      "partner-search-input": {
+        "modelName": "Partner",
+        "__attributes": {
+          "title_part1": {
+            "value": "Search Partner ",
+            "en": ""
+          }
+        },
+        "id": {
+          "label": {
+            "value": "Id",
+            "en": ""
+          }
+        },
+        "alias": {
+          "label": {
+            "value": "Alias",
+            "en": ""
+          }
+        },
+        "type": {
+          "label": {
+            "value": "Type",
+            "en": ""
+          }
+        },
+        "moreFilters": {
+          "label": {
+            "value": "More filters",
+            "en": ""
+          }
+        },
+        "direction": {
+          "label": {
+            "value": "Direction",
+            "en": ""
+          }
+        },
+        "application": {
+          "label": {
+            "value": "Application",
+            "en": ""
+          }
+        },
+        "processedFlowType": {
+          "label": {
+            "value": "Processed Flow Type",
+            "en": ""
+          }
+        },
+        "description": {
+          "label": {
+            "value": "Description",
+            "en": ""
+          }
+        }
+      },
+      "partner-view": {
+        "modelName": "Partner",
+        "__attributes": {
+          "title_part1": {
+            "value": "View ",
+            "en": ""
+          }
+        },
+        "__actions": {
+          "back": {
+            "label": {
+              "value": "Back",
+              "en": ""
+            }
+          },
+          "edit": {
+            "label": {
+              "value": "Modify",
+              "en": ""
+            }
+          }
+        },
+        "id": {
+          "label": {
+            "value": "Id",
+            "en": ""
+          }
+        },
+        "alias": {
+          "label": {
+            "value": "Alias",
+            "en": ""
+          }
+        },
+        "type": {
+          "label": {
+            "value": "Type",
+            "en": ""
+          }
+        },
+        "direction": {
+          "label": {
+            "value": "Direction",
+            "en": ""
+          }
+        },
+        "application": {
+          "label": {
+            "value": "Application",
+            "en": ""
+          }
+        },
+        "processedFlowType": {
+          "label": {
+            "value": "Processed Flow Type",
+            "en": ""
+          }
+        },
+        "description": {
+          "label": {
+            "value": "Description",
+            "en": ""
+          }
+        }
+      }
+    }
+  },
+  "menu": {
+    "search-message": {
+      "value": "Search Message",
+      "en": ""
+    },
+    "message": {
+      "value": "Message",
+      "en": ""
+    },
+    "search-partner": {
+      "value": "Search Partner",
+      "en": ""
+    },
+    "partner": {
+      "value": "Partner",
+      "en": ""
+    }
+  },
+  "Messages": {
+    "selectorCancel": {
+      "value": "Cancel",
+      "en": "Cancel",
+      "fr": "Annuler"
+    },
+    "userName": {
+      "value": "Username",
+      "en": "Username",
+      "fr": "Nom d'utilisateur"
+    },
+    "password": {
+      "value": "Password",
+      "en": "Password",
+      "fr": "Mot de passe"
+    },
+    "signIn": {
+      "value": "Sign in",
+      "en": "Sign in",
+      "fr": "S'authentifier"
+    },
+    "oidcSignIn": {
+      "value": "Click here to access your Application",
+      "en": "Click here to access your Application",
+      "fr": "Cliquez ici pour accéder à l'application"
+    },
+    "changePasswordConfirm": {
+      "value": "Confirm",
+      "en": "Confirm",
+      "fr": "Confirmer"
+    },
+    "changePasswordCancel": {
+      "value": "Cancel",
+      "en": "Cancel",
+      "fr": "Annuler"
+    },
+    "changePasswordRequiredFields": {
+      "value": "Please check the mandatory fields",
+      "en": "Please check the mandatory fields",
+      "fr": "Veuillez remplir les champs obligatoires"
+    },
+    "changePasswordPasswordChanged": {
+      "value": "Your password has been changed successfully!",
+      "en": "Your password has been changed successfully!",
+      "fr": "Votre mot de passe a été changé avec succès!"
+    },
+    "currentPassword": {
+      "value": "Current Password",
+      "en": "Current Password",
+      "fr": "Mot de passe actuel"
+    },
+    "newPassword": {
+      "value": "New Password",
+      "en": "New Password",
+      "fr": "Nouveau mot de passe"
+    },
+    "confirmPassword": {
+      "value": "Confirm Password",
+      "en": "Confirm Password",
+      "fr": "Confirmez votre mot de passe"
+    },
+    "validatePassword": {
+      "value": "Fill a new Password that matches the Confirm Password field",
+      "en": "Fill a new Password that matches the Confirm Password field",
+      "fr": "Veuillez choisir un nouveau mot de passe et le confirmer"
+    },
+    "allLabel": {
+      "value": "All",
+      "en": "All",
+      "fr": "Toutes"
+    },
+    "selectedLabel": {
+      "value": "Selected",
+      "en": "Selected",
+      "fr": "Sélectionnées"
+    },
+    "currentLabel": {
+      "value": "Current",
+      "en": "Current",
+      "fr": "Affichées"
+    },
+    "exportedKeysLabel": {
+      "value": "Exported Keys:",
+      "en": "Exported Keys:",
+      "fr": "Colonnes"
+    },
+    "exportedItemsLabel": {
+      "value": "Exported Items:",
+      "en": "Exported Items:",
+      "fr": "Lignes"
+    },
+    "alertsTitle": {
+      "value": "Alerts",
+      "en": "Alerts",
+      "fr": "Alertes"
+    },
+    "todoListTitle": {
+      "value": "To Do List",
+      "en": "To Do List",
+      "fr": "Tâches à faire"
+    },
+    "todoListCritical": {
+      "value": "Critical:",
+      "en": "Critical:",
+      "fr": "Critique :"
+    },
+    "todoListTodo": {
+      "value": "Todo:",
+      "en": "Todo:",
+      "fr": "A faire:"
+    },
+    "clear": {
+      "value": "Clear",
+      "en": "Clear",
+      "fr": "Effacer la Valeur"
+    },
+    "addItemLabel": {
+      "value": "Add item",
+      "en": "Add item",
+      "fr": "Ajouter un élément"
+    },
+    "items": {
+      "value": "items",
+      "en": "items",
+      "fr": "élements "
+    },
+    "noResultsFound": {
+      "value": "No results were found for the specified search criteria.",
+      "en": "No results were found for the specified search criteria.",
+      "fr": "Aucun résultat n'a été trouvé pour les critères de recherche spécifiés."
+    },
+    "clearFilterLabel": {
+      "value": "Clear Filters",
+      "en": "Clear Filters",
+      "fr": "Effacer les filtres"
+    },
+    "searchFilterLabel": {
+      "value": "See results",
+      "en": "See results",
+      "fr": "Voir les résultats"
+    },
+    "cancelFilterLabel": {
+      "value": "Cancel Filters",
+      "en": "Cancel",
+      "fr": "Annuler"
+    },
+    "clickHere": {
+      "value": "Click Here",
+      "en": "Click here",
+      "fr": "Cliquez ici"
+    },
+    "skipToMenu": {
+      "value": "Skip to menu",
+      "en": "",
+      "fr": "Allez au menu"
+    },
+    "skipToMainContent": {
+      "value": "Skip to main content",
+      "en": "",
+      "fr": "Allez au contenu principal"
+    },
+    "requiredMessage": {
+      "value": "Required fields are marked with an asterisk (*)",
+      "en": "Required fields are marked with an asterisk (*)",
+      "fr": "Les champs obligatoires sont marqués par un astérisque (*)"
+    },
+    "filterPlaceholder": {
+      "value": "Filter...",
+      "en": "Filter...",
+      "fr": "Filtrer..."
+    },
+    "addActionLabel": {
+      "value": "Add Item",
+      "en": "Add Item",
+      "fr": "Ajouter"
+    },
+    "removeActionLabel": {
+      "value": "Remove",
+      "en": "Remove",
+      "fr": "Supprimer"
+    },
+    "cloneActionLabel": {
+      "value": "Clone",
+      "en": "Clone",
+      "fr": "Cloner"
+    },
+    "deletedWithSuccess": {
+      "value": "Item deleted successfully",
+      "en": "Item deleted successfully",
+      "fr": "Element supprimé avec succès"
+    },
+    "deletedItemsWithSuccess": {
+      "value": "Selected items are deleted successfully",
+      "en": "Selected items are deleted successfully",
+      "fr": "Les élements selectionnés sont supprimés avec succès"
+    },
+    "savedWithSuccess": {
+      "value": "Saved Successfully",
+      "en": "Saved Successfully",
+      "fr": "Sauvegardé avec succès"
+    },
+    "true": {
+      "value": "True",
+      "en": "True",
+      "fr": "Vrai"
+    },
+    "false": {
+      "value": "False",
+      "en": "False",
+      "fr": "Faux"
+    },
+    "deleteItem": {
+      "value": "Are you sure?",
+      "en": "Are you sure?",
+      "fr": "Etes vous sûre de vouloir supprimer cet élément ?"
+    },
+    "saveItems": {
+      "value": "Are you sure?",
+      "en": "Are you sure?",
+      "fr": "Etes vous sûre ?"
+    },
+    "Logout": {
+      "value": "Logout",
+      "en": "Log-out",
+      "fr": "Déconnexion"
+    },
+    "changePassword": {
+      "value": "Change Password",
+      "en": "Change your password",
+      "fr": "Changez votre mot de passe"
+    },
+    "invalidFieldRequired": {
+      "value": "Field is required",
+      "en": "Field is required",
+      "fr": "Champs obligatoire"
+    },
+    "invalidMinLengthValue": {
+      "value": "Min length is ",
+      "en": "Min length is ",
+      "fr": "Taille minimale est"
+    },
+    "invalidMaxLengthValue": {
+      "value": "Max length is ",
+      "en": "Max length is ",
+      "fr": "Taille maximale est"
+    },
+    "invalidMinValue": {
+      "value": "Min value is ",
+      "en": "Min value is ",
+      "fr": "Valeur minimale est"
+    },
+    "invalidMaxValue": {
+      "value": "Max value is ",
+      "en": "Max value is ",
+      "fr": "Valeur maximale est"
+    },
+    "labelClickHere": {
+      "value": "Click here",
+      "en": "Click here",
+      "fr": "Cliquez ici"
+    },
+    "msgNoResultsFound": {
+      "value": "No results found",
+      "en": "No results found",
+      "fr": "Aucun résultat trouvé"
+    },
+    "msgNoDataFound": {
+      "value": "No data to display",
+      "en": "No data to display",
+      "fr": "Aucune donnée disponible "
+    },
+    "msgComboboxNoResultsFound": {
+      "value": "No results found",
+      "en": "No results found",
+      "fr": "Aucun résultat trouvé"
+    },
+    "msgComboboxLoading": {
+      "value": "Loading ...",
+      "en": "Loading ...",
+      "fr": "Chargement ..."
+    },
+    "addNewItemComboBox": {
+      "value": "Add new item",
+      "en": "Add new item",
+      "fr": "Ajouter un nouvel élément"
+    },
+    "labelClear": {
+      "value": "Clear",
+      "en": "Clear",
+      "fr": "Effacer"
+    },
+    "labelBrowseFile": {
+      "value": "Browse",
+      "en": "Browse",
+      "fr": "Parcourir"
+    },
+    "labelCancelFile": {
+      "value": "Cancel",
+      "en": "Cancel",
+      "fr": "Annuler"
+    },
+    "labelPage": {
+      "value": "Page",
+      "en": "Page",
+      "fr": "Page"
+    },
+    "labelItems": {
+      "value": "items",
+      "en": "items",
+      "fr": "éléments"
+    },
+    "itemsSaved": {
+      "value": "Selected items are saved successfully",
+      "en": "Selected items are saved successfully",
+      "fr": "Les élements selectionnés sont enregistrés avec succès"
+    },
+    "noItemsToCompare": {
+      "value": "No selected instances to be compared",
+      "en": "No selected instances to be compared",
+      "fr": "Pas d'instances selectionnées à comparer"
+    },
+    "selectOneItem": {
+      "value": "You must select more than one instance",
+      "en": "You must select more than one instance",
+      "fr": "Vous devez selectionner plus qu'une instance"
+    },
+    "noItemsProvided": {
+      "value": "No instance is provided",
+      "en": "No instance is provided",
+      "fr": "Aucune instance n'est fournie"
+    },
+    "failedUpload": {
+      "value": "Failed to upload the file",
+      "en": "Failed to upload the file",
+      "fr": "Erreur de transfert du fichier"
+    },
+    "failedDownload": {
+      "value": "Failed to download the file",
+      "en": "Failed to download the file",
+      "fr": "Erreur de téléchargement du fichier"
+    },
+    "notAllowedToOpenScreen": {
+      "value": "You are not allowed to open this screen",
+      "en": "You are not allowed to open this screen",
+      "fr": "Vous n'êtes pas autorisés à accéder à cette page"
+    },
+    "confirmationMsg": {
+      "value": "Confirmation",
+      "en": "Confirmation",
+      "fr": "Confirmation"
+    },
+    "exportWarningMessage": {
+      "value": "no items selected",
+      "en": "no items selected",
+      "fr": "Aucun élément sélectionné"
+    },
+    "idleTitle": {
+      "value": "Your session is about to expire",
+      "en": "Your session is about to expire",
+      "fr": "Votre session est sur le point d'expirer"
+    },
+    "idleAutoDisconnectMessagePart1": {
+      "value": "You will be automatically signed out in",
+      "en": "You will be automatically signed out in",
+      "fr": "Vous serez automatiquement déconnecté dans"
+    },
+    "idleAutoDisconnectMessagePart2": {
+      "value": "seconds",
+      "en": "seconds",
+      "fr": "secondes"
+    },
+    "idleActionMessage": {
+      "value": "Do you want to stay signed in?",
+      "en": "Do you want to stay signed in?",
+      "fr": "Voulez-vous rester connecté ?"
+    },
+    "idleSignOut": {
+      "value": "Sign Out Now",
+      "en": "Sign Out Now",
+      "fr": "Se déconnecter"
+    },
+    "idleSignIn": {
+      "value": "Stay Signed In",
+      "en": "Stay Signed In",
+      "fr": "Rester connecté"
+    },
+    "welcome": {
+      "value": "Welcome to",
+      "en": "Welcome to",
+      "fr": "Bienvenue à"
+    }
+  },
+  "primeng": {
+    "{0} selected items": {
+      "value": "{0} selected items",
+      "en": "{0} selected items",
+      "fr": "{0} élément(s) sélectionné(s)"
+    },
+    "before": {
+      "value": "before",
+      "en": "Before",
+      "fr": "Avant",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "after": {
+      "value": "after",
+      "en": "After",
+      "fr": "Après",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "clear": {
+      "value": "clear",
+      "en": "Clear",
+      "fr": "Effacer",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "apply": {
+      "value": "apply",
+      "en": "Apply",
+      "fr": "Appliquer",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "accept": {
+      "value": "accept",
+      "en": "Yes",
+      "fr": "Oui",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "reject": {
+      "value": "reject",
+      "en": "No",
+      "fr": "Non",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "dayNames": {
+      "value": "dayName",
+      "en": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "fr": [
+        "Dimanche",
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi",
+        "Samedi"
+      ],
+      "es": [],
+      "de": [],
+      "it": [],
+      "zh": [],
+      "pt": []
+    },
+    "dayNamesShort": {
+      "value": "dayNamesShort",
+      "en": [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+      ],
+      "fr": [
+        "Dim",
+        "Lun",
+        "Mar",
+        "Mer",
+        "Jeu",
+        "Ven",
+        "Sam"
+      ],
+      "es": [],
+      "de": [],
+      "it": [],
+      "zh": [],
+      "pt": []
+    },
+    "dayNamesMin": {
+      "value": "dayNamesMin",
+      "en": [
+        "Su",
+        "Mo",
+        "Tu",
+        "We",
+        "Th",
+        "Fr",
+        "Sa"
+      ],
+      "fr": [
+        "Di",
+        "Lu",
+        "Ma",
+        "Me",
+        "Je",
+        "Ve",
+        "Sa"
+      ],
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "monthNames": {
+      "value": "monthNames",
+      "en": [
+        "January ",
+        "February ",
+        "March ",
+        "April ",
+        "May ",
+        "June ",
+        "July ",
+        "August ",
+        "September ",
+        "October ",
+        "November ",
+        "December "
+      ],
+      "fr": [
+        "Janvier ",
+        "Février ",
+        "Mars ",
+        "Avril ",
+        "Mai ",
+        "Juin ",
+        "Juillet ",
+        "Août ",
+        "Septembre ",
+        "Octobre ",
+        "Novembre ",
+        "Décembre "
+      ],
+      "es": [],
+      "de": [],
+      "it": [],
+      "zh": [],
+      "pt": []
+    },
+    "monthNamesShort": {
+      "value": "monthNamesShort",
+      "en": [
+        "Jan ",
+        "Feb ",
+        "Mar ",
+        "Apr ",
+        "May ",
+        "Jun ",
+        "Jul ",
+        "Aug ",
+        "Sep ",
+        "Oct ",
+        "Nov ",
+        "Dec "
+      ],
+      "fr": [
+        "Jan ",
+        "Fév ",
+        "Mar ",
+        "Av ",
+        "Mai ",
+        "Juin ",
+        "Jui ",
+        "Ao ",
+        "Sep ",
+        "Oct ",
+        "Nov ",
+        "Déc "
+      ],
+      "es": [],
+      "de": [],
+      "it": [],
+      "zh": [],
+      "pt": []
+    },
+    "today": {
+      "value": "today",
+      "en": "Today",
+      "fr": "Aujourd'hui",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "weekHeader": {
+      "value": "weekHeader",
+      "en": "Wk",
+      "fr": "Sem",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "weak": {
+      "value": "weak",
+      "en": "Weak",
+      "fr": "Faible",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "medium": {
+      "value": "medium",
+      "en": "Medim",
+      "fr": "Moyen",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "strong": {
+      "value": "strong",
+      "en": "Strong",
+      "fr": "Fort",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "passwordPrompt": {
+      "value": "passwordPrompt",
+      "en": "Enter a password",
+      "fr": "Entrez un mot de passe",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "emptyMessage": {
+      "value": "emptyMessage",
+      "en": "No results found",
+      "fr": "Aucun résultat trouvé",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    },
+    "emptyFilterMessage": {
+      "value": "emptyFilterMessage ",
+      "en": "No results found",
+      "fr": "Aucun résultat trouvé",
+      "es": "",
+      "de": "",
+      "it": "",
+      "zh": "",
+      "pt": ""
+    }
+  },
+  "definitions": {
+    "Message": {
+      "id": {
+        "value": "id",
+        "en": ""
+      },
+      "messageContent": {
+        "value": "messageContent",
+        "en": ""
+      },
+      "messageType": {
+        "value": "messageType",
+        "en": ""
+      },
+      "dateReceived": {
+        "value": "dateReceived",
+        "en": ""
+      },
+      "status": {
+        "value": "status",
+        "en": ""
+      }
+    },
+    "Partner": {
+      "id": {
+        "value": "id",
+        "en": ""
+      },
+      "alias": {
+        "value": "alias",
+        "en": ""
+      },
+      "direction": {
+        "value": "direction",
+        "en": ""
+      },
+      "application": {
+        "value": "application",
+        "en": ""
+      },
+      "processedFlowType": {
+        "value": "processedFlowType",
+        "en": ""
+      },
+      "description": {
+        "value": "description",
+        "en": ""
+      }
+    }
+  }
+}

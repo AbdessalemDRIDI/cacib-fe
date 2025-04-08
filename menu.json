@@ -1,0 +1,24 @@
+[
+  {
+    "label": "Message",
+    "items": [
+      {
+        "label": "Search Message",
+        "path": "/message/message-searchInput",
+        "featureName": "message"
+      }
+    ],
+    "icon": "pi pi-cog"
+  },
+  {
+    "label": "Partner",
+    "items": [
+      {
+        "label": "Search Partner",
+        "path": "/partner/partner-searchInput",
+        "featureName": "partner"
+      }
+    ],
+    "icon": "pi pi-cog"
+  }
+]

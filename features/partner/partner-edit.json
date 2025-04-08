@@ -1,0 +1,195 @@
+{
+  "name": "partner-edit",
+  "featureName": "partner",
+  "title": "Edit",
+  "showTitle": true,
+  "template": "edit",
+  "componentsBreakpoints": {
+    "xs": 12,
+    "sm": 12,
+    "md": 6,
+    "lg": 4
+  },
+  "components": [
+    {
+      "name": "id",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "defaultOperator": "==",
+        "label": "Id"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "alias",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "defaultOperator": "==",
+        "label": "Alias"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "type",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "defaultOperator": "==",
+        "label": "Type"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "direction",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "defaultOperator": "==",
+        "label": "Direction"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "application",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "defaultOperator": "==",
+        "label": "Application"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "processedFlowType",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "defaultOperator": "==",
+        "label": "Processed Flow Type"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "description",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "defaultOperator": "==",
+        "label": "Description"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "type": "Button",
+      "properties": {
+        "verticalAlignment": "none",
+        "visibleCondition": {
+          "hideColumn": false
+        },
+        "additionalAttributes": [
+          {
+            "type": "static"
+          }
+        ],
+        "label": "Cancel",
+        "icon": "pi pi-times",
+        "iconDirection": "left",
+        "template": "cancel"
+      },
+      "name": "cancel"
+    },
+    {
+      "type": "Button",
+      "properties": {
+        "verticalAlignment": "none",
+        "visibleCondition": {
+          "hideColumn": false
+        },
+        "additionalAttributes": [
+          {
+            "type": "static"
+          }
+        ],
+        "label": "Save",
+        "template": "save",
+        "icon": "pi pi-save",
+        "iconDirection": "left",
+        "screens": [
+          {
+            "navigationType": "back"
+          }
+        ],
+        "servicePaths": [
+          {
+            "url": "/partners/save",
+            "httpMethod": "POST"
+          }
+        ]
+      },
+      "name": "save"
+    }
+  ],
+  "enableRequiredField": true,
+  "disableNewInstanceService": false,
+  "modelName": "Partner",
+  "newInstanceService": {
+    "url": "/partners/new",
+    "httpMethod": "GET"
+  },
+  "getInstanceByIdService": {
+    "url": "/partners/{code}",
+    "httpMethod": "GET",
+    "params": [
+      {
+        "param": "keys",
+        "type": "Static",
+        "value": "$keys"
+      },
+      {
+        "param": "code",
+        "paramType": "Path param",
+        "type": "Path param",
+        "value": "id"
+      }
+    ]
+  }
+}

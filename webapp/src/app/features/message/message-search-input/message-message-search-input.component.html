@@ -1,0 +1,278 @@
+<app-screen
+  [showHeader]="false"
+  [loaderShow]="loading()"
+  leftResponsiveConfig="col-xs-4 col-sm-4 col-md-4 col-lg-4 pl-0"
+  rightResponsiveConfig="col-8 col-sm-8 col-md-8 col-lg-8 pr-0 pl-0"
+  styleName="container-fluid pl-screen pl-screen-si e2e-screen-si test"
+>
+  <ng-template #headerActions> </ng-template>
+  @if (data$ | async) {
+    <ng-template #bodyScreen>
+      <form [formGroup]="form">
+        <div class="card e2e-card content-form">
+          <div class="row">
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-3 id p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-4 mt-lg-0"
+            >
+              <div class="vp-filter-with-operator">
+                <div class="vp-filter-component">
+                  <p-dropdown
+                    plmAccessibility
+                    styleClass="vp-filter-operator e2e-filter-operator"
+                    appendTo="body"
+                    ariaLabel="idOperator"
+                    [options]="[] | operator: 'number'"
+                    formControlName="idOperator"
+                  >
+                  </p-dropdown>
+
+                  <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.id }">
+                    <div class="vp-inputtext-wraper">
+                      <input
+                        class="e2e-text-field number"
+                        type="text"
+                        pInputText
+                        id="id"
+                        aria-label="Id"
+                        [readonly]=""
+                        formControlName="id"
+                        [required]="false"
+                        plmNumberFormatter
+                        oninput="this.value = this.value.replace(/[^-?\d.]|-(?=.*-)/g, '')"
+                      />
+                      <label i18n="@@UID__fld_Message@id;message;message-search-input" for="id">
+                        Id
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="vp-filter-validation">
+                  <app-validator [control]="form?.get('id')"></app-validator>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-3 message-content p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-4 mt-lg-0"
+            >
+              <div class="vp-filter-with-operator">
+                <div class="vp-filter-component">
+                  <p-dropdown
+                    plmAccessibility
+                    styleClass="vp-filter-operator e2e-filter-operator"
+                    appendTo="body"
+                    ariaLabel="messageContentOperator"
+                    [options]="[] | operator: 'string'"
+                    formControlName="messageContentOperator"
+                  >
+                  </p-dropdown>
+
+                  <div
+                    [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.messageContent }"
+                  >
+                    <div class="vp-inputtext-wraper">
+                      <input
+                        class="e2e-text-field input"
+                        type="text"
+                        pInputText
+                        id="messagecontent"
+                        aria-label="Message Content"
+                        [readonly]=""
+                        formControlName="messageContent"
+                        [required]="false"
+                      />
+                      <label
+                        i18n="@@UID__fld_Message@messageContent;message;message-search-input"
+                        for="messagecontent"
+                      >
+                        Message Content
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="vp-filter-validation">
+                  <app-validator [control]="form?.get('messageContent')"></app-validator>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-3 message-type p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-4 mt-lg-0"
+            >
+              <div class="vp-filter-with-operator">
+                <div class="vp-filter-component">
+                  <p-dropdown
+                    plmAccessibility
+                    styleClass="vp-filter-operator e2e-filter-operator"
+                    appendTo="body"
+                    ariaLabel="messageTypeOperator"
+                    [options]="[] | operator: 'string'"
+                    formControlName="messageTypeOperator"
+                  >
+                  </p-dropdown>
+
+                  <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.messageType }">
+                    <div class="vp-inputtext-wraper">
+                      <input
+                        class="e2e-text-field input"
+                        type="text"
+                        pInputText
+                        id="messagetype"
+                        aria-label="Message Type"
+                        [readonly]=""
+                        formControlName="messageType"
+                        [required]="false"
+                      />
+                      <label
+                        i18n="@@UID__fld_Message@messageType;message;message-search-input"
+                        for="messagetype"
+                      >
+                        Message Type
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="vp-filter-validation">
+                  <app-validator [control]="form?.get('messageType')"></app-validator>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-2 col-lg-2 more-filters vp-valign-top p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-0 mt-lg-0"
+            >
+              <vp-filter
+                plmAccessibility
+                [form]="form"
+                clearFilterLabel="Clear Filters"
+                i18n-clearFilterLabel="message;clearFilterLabel"
+                searchLabel="See results"
+                i18n-searchLabel="message;searchFilterLabel"
+                cancelLabel="Cancel Filters"
+                i18n-cancelLabel="message;cancelFilterLabel"
+                (searchAdvancedFilters)="doAdvancedFilters($event)"
+                label="More filters"
+                i18n-label="@@UID__fld_Message@moreFilters;message;message-search-input"
+                styleClass="basic third"
+                class="right"
+              >
+                <div class="row e2e-row">
+                  <div
+                    class="e2e-group col-12 col-sm-12 col-md-6 col-lg-4 date-received p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-4 mt-lg-0"
+                  >
+                    <div class="vp-filter-with-operator vp-component-from-to-date">
+                      <div class="vp-filter-component">
+                        <p-dropdown
+                          plmAccessibility
+                          styleClass="vp-filter-operator e2e-filter-operator"
+                          appendTo="body"
+                          ariaLabel="dateReceivedOperator"
+                          [options]="[] | operator: 'date'"
+                          formControlName="dateReceivedOperator"
+                        >
+                        </p-dropdown>
+
+                        <div class="input-field date-field e2e-date-field">
+                          <p-calendar
+                            formControlName="dateReceived"
+                            selectionMode="range"
+                            appendTo="body"
+                            plmAccessibility
+                            iconAriaLabel="Date Received"
+                            ariaLabel="Date Received"
+                            [showIcon]="true"
+                            [showButtonBar]="true"
+                            inputId="datereceived"
+                            [disabled]=""
+                            [required]="false"
+                          >
+                          </p-calendar>
+                          <label
+                            i18n="@@UID__fld_Message@dateReceived;message;message-search-input"
+                            for="datereceived"
+                            >Date Received</label
+                          >
+                        </div>
+                      </div>
+                      <div class="vp-filter-validation">
+                        <app-validator [control]="form?.get('dateReceived')"></app-validator>
+                      </div>
+                    </div>
+
+                    <app-validator [control]="form?.get('dateReceived')"></app-validator>
+                  </div>
+
+                  <div
+                    class="e2e-group col-12 col-sm-12 col-md-6 col-lg-4 status p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-4 mt-lg-0"
+                  >
+                    <div class="vp-filter-with-operator vp-component-text-field">
+                      <div class="vp-filter-component">
+                        <p-dropdown
+                          plmAccessibility
+                          styleClass="vp-filter-operator e2e-filter-operator"
+                          appendTo="body"
+                          ariaLabel="statusOperator"
+                          [options]="[] | operator: 'string'"
+                          formControlName="statusOperator"
+                        >
+                        </p-dropdown>
+
+                        <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.status }">
+                          <div class="vp-inputtext-wraper">
+                            <input
+                              class="e2e-text-field input"
+                              type="text"
+                              pInputText
+                              id="status"
+                              aria-label="Status"
+                              [readonly]=""
+                              formControlName="status"
+                              [required]="false"
+                            />
+                            <label
+                              i18n="@@UID__fld_Message@status;message;message-search-input"
+                              for="status"
+                            >
+                              Status
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vp-filter-validation">
+                        <app-validator [control]="form?.get('status')"></app-validator>
+                      </div>
+                    </div>
+
+                    <app-validator [control]="form?.get('status')"></app-validator>
+                  </div>
+                </div>
+              </vp-filter>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-1 col-lg-1 search vp-valign-bottom p-0 pr-xs-0 pl-xs-0 pr-sm-0 pl-sm-0 pr-md-0 pl-md-0 pr-lg-0 pl-lg-0 mt-lg-0"
+            >
+              <p-button
+                class="plm-button e2e-button right"
+                i18n-label="@@UID__act_search;message;message-search-input"
+                icon="pi pi-search"
+                [disabled]="!this.isFormValid()"
+                [style]="{ width: '100%' }"
+                ariaLabel="Icon Button"
+                (onClick)="doSearch()"
+              >
+              </p-button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+  }
+  <ng-template #outlets>
+    <!-- to display screens with navigation type 'dialog'-->
+    <ng-template #dialogContainer></ng-template>
+
+    <!-- to display screens with navigation type 'call'-->
+    <ng-template #callContainer></ng-template>
+  </ng-template>
+</app-screen>

@@ -1,0 +1,5 @@
+<app-loader-mask [show]="showLoading()"></app-loader-mask>
+@if (loaded) {
+  <vp-branding></vp-branding>
+  <router-outlet></router-outlet>
+}

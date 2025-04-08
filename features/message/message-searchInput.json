@@ -1,0 +1,170 @@
+{
+  "name": "message-searchInput",
+  "featureName": "message",
+  "title": "Search Message",
+  "showTitle": false,
+  "template": "searchInput",
+  "componentsBreakpoints": {
+    "xs": "12",
+    "sm": "12",
+    "md": "6",
+    "lg": "4"
+  },
+  "components": [
+    {
+      "name": "id",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "mandatory": false,
+        "defaultOperator": "==",
+        "label": "Id"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "3"
+      }
+    },
+    {
+      "name": "messageContent",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "mandatory": false,
+        "defaultOperator": "==",
+        "label": "Message Content"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "3"
+      }
+    },
+    {
+      "name": "messageType",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "mandatory": false,
+        "defaultOperator": "==",
+        "label": "Message Type"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "3"
+      }
+    },
+    {
+      "type": "Filters",
+      "properties": {
+        "label": "More filters",
+        "alignment": "right",
+        "styleName": "basic third",
+        "removeSpace": "right",
+        "verticalAlignment": "top"
+      },
+      "componentsBreakpoints": {
+        "xs": 12,
+        "sm": 12,
+        "md": 6,
+        "lg": 4
+      },
+      "name": "more-filters",
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "2",
+        "lg": "2"
+      },
+      "components": [
+        {
+          "name": "dateReceived",
+          "type": "FromToDate",
+          "properties": {
+            "showLabel": true,
+            "mandatory": false,
+            "label": "Date Received"
+          },
+          "breakpoints": {
+            "xs": 12,
+            "sm": 12,
+            "md": 6,
+            "lg": 4
+          }
+        },
+        {
+          "name": "status",
+          "type": "TextField",
+          "properties": {
+            "showLabel": true,
+            "mandatory": false,
+            "defaultOperator": "==",
+            "label": "Status"
+          },
+          "breakpoints": {
+            "xs": "12",
+            "sm": "12",
+            "md": "6",
+            "lg": "4"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Button",
+      "properties": {
+        "additionalAttributes": [
+          {
+            "type": "static"
+          }
+        ],
+        "label": "",
+        "template": "search",
+        "verticalAlignment": "bottom",
+        "icon": "pi pi-search",
+        "styleName": "",
+        "screens": [
+          {
+            "navigationType": "call",
+            "path": "/message/message-search"
+          }
+        ],
+        "visibleCondition": {
+          "hideColumn": false
+        },
+        "horizontalAlignment": "right",
+        "position": "top",
+        "removeSpace": "both",
+        "width": "100%"
+      },
+      "name": "search",
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "1",
+        "lg": "1"
+      }
+    }
+  ],
+  "actions": [],
+  "screen": {
+    "autoRun": true,
+    "navigationType": "call",
+    "path": "/message/message-search"
+  },
+  "styleName": "test",
+  "enableRequiredField": false,
+  "displayNavigationRight": false,
+  "leftResponsiveConfig": {
+    "extraSmall": "col-xs-4",
+    "small": "col-sm-4",
+    "medium": "col-md-4",
+    "large": "col-lg-4"
+  },
+  "modelName": "Message"
+}

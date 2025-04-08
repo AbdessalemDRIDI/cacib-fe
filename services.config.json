@@ -1,0 +1,29 @@
+{
+  "login": {
+    "url": "security/authenticate",
+    "httpMethod": "POST"
+  },
+  "logout": {
+    "url": "security/logout",
+    "httpMethod": "POST"
+  },
+  "profile": {
+    "url": "presentationProfilesController/currentProfile",
+    "httpMethod": "GET"
+  },
+  "messages": {
+    "schema": {
+      "title": "title",
+      "summary": "description",
+      "type": "messageType",
+      "code": "code",
+      "jsonProperty": "messages"
+    },
+    "types": {
+      "error": "error",
+      "warning": "warning",
+      "info": "info",
+      "success": "success"
+    }
+  }
+}

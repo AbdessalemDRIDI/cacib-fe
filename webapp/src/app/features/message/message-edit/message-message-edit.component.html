@@ -1,0 +1,192 @@
+<app-screen
+  [loaderShow]="loading()"
+  [showHeader]="true"
+  class="container-fluid pl-screen e2e-screen-edit"
+>
+  @if (data) {
+    <ng-template #headerTitle>
+      <h1>
+        {{ getDefaultTitle() }}
+      </h1>
+    </ng-template>
+  }
+  <ng-template #headerActions> </ng-template>
+  @if (data) {
+    <ng-template #bodyScreen>
+      <div class="vp-required-message" i18n="message;requiredMessage">
+        Required fields are marked with an asterisk (*)
+      </div>
+
+      <form [formGroup]="form">
+        <div class="card content-form e2e-content-form">
+          <div class="row">
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-4 id p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-4 mt-lg-0"
+            >
+              <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.id }">
+                <div class="vp-inputtext-wraper">
+                  <input
+                    class="e2e-text-field number"
+                    type="text"
+                    pInputText
+                    id="id"
+                    aria-label="Id"
+                    [readonly]=""
+                    formControlName="id"
+                    [required]="false"
+                    plmNumberFormatter
+                    oninput="this.value = this.value.replace(/[^-?\d.]|-(?=.*-)/g, '')"
+                  />
+                  <label i18n="@@UID__fld_Message@id;message;message-edit" for="id"> Id </label>
+                </div>
+
+                <app-validator [control]="form?.get('id')"></app-validator>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-4 message-content p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-4 mt-lg-0"
+            >
+              <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.messageContent }">
+                <div class="vp-inputtext-wraper">
+                  <input
+                    class="e2e-text-field input"
+                    type="text"
+                    pInputText
+                    id="messagecontent"
+                    aria-label="Message Content"
+                    [readonly]=""
+                    formControlName="messageContent"
+                    [required]="false"
+                  />
+                  <label
+                    i18n="@@UID__fld_Message@messageContent;message;message-edit"
+                    for="messagecontent"
+                  >
+                    Message Content
+                  </label>
+                </div>
+
+                <app-validator [control]="form?.get('messageContent')"></app-validator>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-4 message-type p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-0 mt-lg-0"
+            >
+              <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.messageType }">
+                <div class="vp-inputtext-wraper">
+                  <input
+                    class="e2e-text-field input"
+                    type="text"
+                    pInputText
+                    id="messagetype"
+                    aria-label="Message Type"
+                    [readonly]=""
+                    formControlName="messageType"
+                    [required]="false"
+                  />
+                  <label
+                    i18n="@@UID__fld_Message@messageType;message;message-edit"
+                    for="messagetype"
+                  >
+                    Message Type
+                  </label>
+                </div>
+
+                <app-validator [control]="form?.get('messageType')"></app-validator>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-4 date-received p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-4"
+            >
+              <div class="input-field date-field e2e-date-field">
+                <p-calendar
+                  plmAccessibility
+                  [showButtonBar]="true"
+                  [showIcon]="true"
+                  [focusTrap]="true"
+                  iconAriaLabel="Date Received"
+                  ariaLabel="Date Received"
+                  appendTo="body"
+                  inputId="datereceived"
+                  [disabled]=""
+                  formControlName="dateReceived"
+                  [required]="false"
+                >
+                </p-calendar>
+                <label
+                  i18n="@@UID__fld_Message@dateReceived;message;message-edit"
+                  for="datereceived"
+                >
+                  Date Received
+                </label>
+
+                <app-validator [control]="form?.get('dateReceived')"></app-validator>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-4 status p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-4"
+            >
+              <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.status }">
+                <div class="vp-inputtext-wraper">
+                  <input
+                    class="e2e-text-field input"
+                    type="text"
+                    pInputText
+                    id="status"
+                    aria-label="Status"
+                    [readonly]=""
+                    formControlName="status"
+                    [required]="false"
+                  />
+                  <label i18n="@@UID__fld_Message@status;message;message-edit" for="status">
+                    Status
+                  </label>
+                </div>
+
+                <app-validator [control]="form?.get('status')"></app-validator>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+  }
+  @if (!loading() && initialized && !data) {
+    <ng-template #bodyScreen>
+      <div i18n="message;msgNoDataFound">No data to display</div>
+    </ng-template>
+  }
+  <ng-template #footerActions>
+    <p-button
+      class="plm-button e2e-button style-cancel"
+      i18n-label="@@UID__act_cancel;message;message-edit"
+      label="Cancel"
+      icon="pi pi-times"
+      iconPos="left"
+      ariaLabel="Cancel"
+      (onClick)="doCancel()"
+    >
+    </p-button>
+
+    <p-button
+      class="plm-button e2e-button style-save"
+      i18n-label="@@UID__act_save;message;message-edit"
+      label="Save"
+      icon="pi pi-save"
+      iconPos="left"
+      [disabled]="!this.isFormValid()"
+      ariaLabel="Save"
+      (onClick)="doSave()"
+    >
+    </p-button>
+  </ng-template>
+</app-screen>
+<!-- to display screens with navigation type 'dialog'-->
+<ng-template #dialogContainer></ng-template>
+
+<!-- to display screens with navigation type 'call'-->
+<ng-template #callContainer></ng-template>

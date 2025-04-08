@@ -1,0 +1,27 @@
+<div [class]="styleName">
+  <app-loader-mask [show]="loaderShow"></app-loader-mask>
+  @if (showHeader) {
+    <app-header-screen [headerTitle]="headerTitle" [actionsTemplate]="headerActions">
+    </app-header-screen>
+  }
+  <div class="app-body-screen">
+    @if (displayNavigationRight) {
+      <div>
+        <div class="row">
+          <div [class]="leftResponsiveConfig" [ngClass]="['mt-0']">
+            <ng-container *ngTemplateOutlet="leftBodyScreen"></ng-container>
+          </div>
+          <div [class]="rightResponsiveConfig" [ngClass]="['mt-0']">
+            <ng-container *ngTemplateOutlet="rightOutlets"></ng-container>
+          </div>
+        </div>
+      </div>
+    }
+    <ng-container *ngTemplateOutlet="bodyScreen"></ng-container>
+  </div>
+  @if (footerActions && showFooter) {
+    <app-footer-screen [actionsTemplate]="footerActions" [actionsLeft]="footerActionsLeft">
+    </app-footer-screen>
+  }
+</div>
+<ng-container *ngTemplateOutlet="outlets"></ng-container>

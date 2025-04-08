@@ -1,0 +1,165 @@
+{
+  "name": "message-edit",
+  "featureName": "message",
+  "title": "Edit",
+  "showTitle": true,
+  "template": "edit",
+  "componentsBreakpoints": {
+    "xs": 12,
+    "sm": 12,
+    "md": 6,
+    "lg": 4
+  },
+  "components": [
+    {
+      "name": "id",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "defaultOperator": "==",
+        "label": "Id"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "messageContent",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "defaultOperator": "==",
+        "label": "Message Content"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "messageType",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "defaultOperator": "==",
+        "label": "Message Type"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "dateReceived",
+      "type": "Date",
+      "properties": {
+        "showLabel": true,
+        "defaultOperator": "==",
+        "label": "Date Received"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "status",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "defaultOperator": "==",
+        "label": "Status"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "type": "Button",
+      "properties": {
+        "verticalAlignment": "none",
+        "visibleCondition": {
+          "hideColumn": false
+        },
+        "additionalAttributes": [
+          {
+            "type": "static"
+          }
+        ],
+        "label": "Cancel",
+        "icon": "pi pi-times",
+        "iconDirection": "left",
+        "template": "cancel"
+      },
+      "name": "cancel"
+    },
+    {
+      "type": "Button",
+      "properties": {
+        "verticalAlignment": "none",
+        "visibleCondition": {
+          "hideColumn": false
+        },
+        "additionalAttributes": [
+          {
+            "type": "static"
+          }
+        ],
+        "label": "Save",
+        "template": "save",
+        "icon": "pi pi-save",
+        "iconDirection": "left",
+        "screens": [
+          {
+            "navigationType": "back"
+          }
+        ],
+        "servicePaths": [
+          {
+            "url": "/messages/save",
+            "httpMethod": "POST"
+          }
+        ]
+      },
+      "name": "save"
+    }
+  ],
+  "enableRequiredField": true,
+  "disableNewInstanceService": false,
+  "modelName": "Message",
+  "newInstanceService": {
+    "url": "/messages/new",
+    "httpMethod": "GET"
+  },
+  "getInstanceByIdService": {
+    "url": "/messages/{code}",
+    "httpMethod": "GET",
+    "params": [
+      {
+        "param": "keys",
+        "type": "Static",
+        "value": "$keys"
+      },
+      {
+        "param": "code",
+        "paramType": "Path param",
+        "type": "Path param",
+        "value": "id"
+      }
+    ]
+  }
+}

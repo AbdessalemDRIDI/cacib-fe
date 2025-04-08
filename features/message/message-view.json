@@ -1,0 +1,145 @@
+{
+  "name": "message-view",
+  "featureName": "message",
+  "title": "View",
+  "showTitle": true,
+  "template": "view",
+  "componentsBreakpoints": {
+    "xs": 12,
+    "sm": 12,
+    "md": 6,
+    "lg": 4
+  },
+  "components": [
+    {
+      "name": "id",
+      "type": "Label",
+      "properties": {
+        "label": "Id"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "messageContent",
+      "type": "Label",
+      "properties": {
+        "label": "Message Content"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "messageType",
+      "type": "Label",
+      "properties": {
+        "label": "Message Type"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "dateReceived",
+      "type": "Label",
+      "properties": {
+        "label": "Date Received"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "status",
+      "type": "Label",
+      "properties": {
+        "label": "Status"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "type": "Button",
+      "properties": {
+        "verticalAlignment": "none",
+        "visibleCondition": {
+          "hideColumn": false
+        },
+        "additionalAttributes": [
+          {
+            "type": "static"
+          }
+        ],
+        "label": "Back",
+        "icon": "pi pi-arrow-left",
+        "iconDirection": "left",
+        "template": "cancel"
+      },
+      "name": "back"
+    },
+    {
+      "type": "Button",
+      "properties": {
+        "verticalAlignment": "none",
+        "visibleCondition": {
+          "hideColumn": false
+        },
+        "additionalAttributes": [
+          {
+            "type": "static"
+          }
+        ],
+        "label": "Modify",
+        "template": "edit",
+        "icon": "pi pi-eye",
+        "iconDirection": "left",
+        "screens": [
+          {
+            "navigationType": "forward",
+            "path": "/message/message-edit"
+          }
+        ],
+        "position": "top"
+      },
+      "name": "edit"
+    }
+  ],
+  "modelName": "Message",
+  "getInstanceByIdService": {
+    "url": "/messages/{code}",
+    "httpMethod": "GET",
+    "params": [
+      {
+        "param": "keys",
+        "type": "Static",
+        "value": "$keys"
+      },
+      {
+        "param": "code",
+        "paramType": "Path param",
+        "type": "Path param",
+        "value": "id"
+      }
+    ]
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "name": "message-search",
+  "featureName": "message",
+  "title": "List of Messages",
+  "showTitle": true,
+  "template": "search",
+  "componentsBreakpoints": {
+    "xs": 12,
+    "sm": 12,
+    "md": 6,
+    "lg": 4
+  },
+  "styleName": "",
+  "columns": [
+    {
+      "name": "id",
+      "type": "Column",
+      "properties": {
+        "responsiveResolution": "xs",
+        "sortable": true,
+        "label": "Id"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "messageContent",
+      "type": "Column",
+      "properties": {
+        "responsiveResolution": "xs",
+        "sortable": true,
+        "label": "Message Content"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "messageType",
+      "type": "Column",
+      "properties": {
+        "responsiveResolution": "xs",
+        "sortable": true,
+        "label": "Message Type"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "dateReceived",
+      "type": "Column",
+      "properties": {
+        "responsiveResolution": "xs",
+        "sortable": true,
+        "label": "Date Received"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "name": "status",
+      "type": "Column",
+      "properties": {
+        "responsiveResolution": "xs",
+        "sortable": true,
+        "label": "Status"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "4"
+      }
+    },
+    {
+      "type": "Container",
+      "properties": {
+        "responsiveResolution": "xs",
+        "sortable": true,
+        "label": "Actions",
+        "width": "100px",
+        "styleName": "actions-footer"
+      },
+      "componentsBreakpoints": {
+        "xs": 12,
+        "sm": 12,
+        "md": 6,
+        "lg": 4
+      },
+      "name": "Container-55038",
+      "components": [
+        {
+          "type": "InlineButton",
+          "properties": {
+            "label": "Edit",
+            "template": "edit-item",
+            "screens": [
+              {
+                "navigationType": "switch",
+                "path": "/message/message-edit"
+              }
+            ],
+            "icon": "pi pi-pencil"
+          },
+          "name": "edit"
+        },
+        {
+          "type": "InlineButton",
+          "properties": {
+            "label": "View",
+            "template": "view-item",
+            "icon": "pi pi-eye",
+            "screens": [
+              {
+                "navigationType": "switch",
+                "path": "/message/message-view"
+              }
+            ]
+          },
+          "name": "view"
+        },
+        {
+          "type": "InlineButton",
+          "properties": {
+            "label": "Delete",
+            "template": "delete-item",
+            "icon": "pi pi-trash",
+            "servicePaths": [
+              {
+                "url": "/messages/{code}",
+                "httpMethod": "DELETE"
+              }
+            ]
+          },
+          "name": "delete"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Button",
+      "properties": {
+        "verticalAlignment": "none",
+        "visibleCondition": {
+          "hideColumn": false
+        },
+        "additionalAttributes": [
+          {
+            "type": "static"
+          }
+        ],
+        "label": "Create",
+        "template": "create",
+        "screens": [
+          {
+            "navigationType": "switch",
+            "path": "/message/message-edit"
+          }
+        ],
+        "position": "top",
+        "icon": "pi pi-plus",
+        "iconDirection": "left"
+      },
+      "name": "create"
+    },
+    {
+      "type": "Button",
+      "properties": {
+        "verticalAlignment": "none",
+        "visibleCondition": {
+          "hideColumn": false
+        },
+        "additionalAttributes": [
+          {
+            "type": "static"
+          }
+        ],
+        "position": "top",
+        "exportedItems": "Selected",
+        "exportFormat": "Default",
+        "label": "Export",
+        "template": "export",
+        "showExportOptions": true,
+        "servicePaths": [],
+        "exportedKeys": "ALL",
+        "icon": "pi pi-download",
+        "iconDirection": "left"
+      },
+      "name": "export"
+    }
+  ],
+  "displayNavigationRight": false,
+  "leftResponsiveConfig": {
+    "extraSmall": "col-xs-4",
+    "small": "col-sm-4",
+    "medium": "col-md-4",
+    "large": "col-lg-4"
+  },
+  "viewMode": "Default",
+  "frozenColumn": "Last Column",
+  "autoLayout": true,
+  "disableResizeColumn": false,
+  "disableLazy": false,
+  "pagination": {
+    "position": "bottom",
+    "pageSize": "10",
+    "showCombo": true,
+    "hideActions": true,
+    "pagePossibleSizes": [
+      10,
+      15,
+      20,
+      50,
+      100
+    ]
+  },
+  "modelName": "Message",
+  "fetchDataService": {
+    "url": "/messages/search",
+    "httpMethod": "GET",
+    "params": [
+      {
+        "param": "criteria",
+        "paramType": "Query param",
+        "type": "Query param",
+        "value": "criteria"
+      },
+      {
+        "param": "keys",
+        "type": "Static",
+        "value": "$keys"
+      },
+      {
+        "param": "page",
+        "paramType": "Query param",
+        "type": "Static",
+        "value": "$page"
+      },
+      {
+        "param": "size",
+        "paramType": "Query param",
+        "type": "Static",
+        "value": "$size"
+      },
+      {
+        "param": "order",
+        "paramType": "Query param",
+        "type": "Static",
+        "value": "$order"
+      }
+    ]
+  },
+  "countDataService": {
+    "url": "/messages/count",
+    "httpMethod": "GET",
+    "params": [
+      {
+        "param": "criteria",
+        "paramType": "Query param",
+        "type": "Query param",
+        "value": "criteria"
+      }
+    ]
+  },
+  "enableSorting": true
+}

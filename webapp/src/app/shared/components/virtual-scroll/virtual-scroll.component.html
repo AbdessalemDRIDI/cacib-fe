@@ -1,0 +1,26 @@
+<div class="p-dataview-content">
+  <p-virtualScroller
+    [value]="valueObservable | async"
+    [scrollHeight]="scrollSize"
+    [itemSize]="itemHeight"
+    (onLazyLoad)="loadPageEvent($event)"
+    [lazy]="true"
+    class="card-container-viewport screen e2e-project"
+  >
+    <ng-template let-threeItems pTemplate="item" let-i="index">
+      <div class="row">
+        @for (rowData of threeItems; track rowData) {
+          <div
+            [ngStyle]="{ height: itemHeight + 'px' }"
+            [ngClass]="rowCols"
+            class="vp-grid col-nogutter"
+          >
+            <ng-container
+              *ngTemplateOutlet="itemTemplate; context: { $implicit: rowData }"
+            ></ng-container>
+          </div>
+        }
+      </div>
+    </ng-template>
+  </p-virtualScroller>
+</div>

@@ -1,0 +1,15 @@
+<div
+  #avatar
+  attr.aria-label="{{ name }}, do you want to change your password ?"
+  tabindex="0"
+  (click)="avatarClick.emit($event)"
+  class="menu-avatar-container"
+>
+  <p-avatar
+    [label]="name?.[0]"
+    styleClass="menu-avatar-container-avatar"
+    shape="circle"
+    size="large"
+  />
+  <span class="veggo-user-name">{{ name }}</span>
+</div>

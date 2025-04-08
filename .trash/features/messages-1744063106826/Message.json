@@ -1,0 +1,22 @@
+{
+  "name": "Message",
+  "featureName": "messages",
+  "title": "Message",
+  "showTitle": true,
+  "template": "searchInput",
+  "componentsBreakpoints": {
+    "xs": 12,
+    "sm": 12,
+    "md": 6,
+    "lg": 4
+  },
+  "displayNavigationRight": false,
+  "leftResponsiveConfig.extraSmall": "col-xs-4",
+  "leftResponsiveConfig.small": "col-sm-4",
+  "leftResponsiveConfig.medium": "col-md-4",
+  "leftResponsiveConfig.large": "col-lg-4",
+  "enableRequiredField": false,
+  "unlinked": true,
+  "components": [],
+  "actions": []
+}

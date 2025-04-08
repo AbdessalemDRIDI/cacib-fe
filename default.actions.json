@@ -1,0 +1,285 @@
+[
+  {
+    "compare": {
+      "name": "compare",
+      "properties": {
+        "template": "compare",
+        "styleName": "style-horizentalsearchactioncompare",
+        "label": "Compare",
+        "position": "top",
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "add": {
+      "name": "add",
+      "properties": {
+        "template": "create",
+        "styleName": "style-addnewcollectionitem",
+        "label": "create",
+        "position": "bottom",
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "cancel": {
+      "name": "cancel",
+      "properties": {
+        "template": "cancel",
+        "styleName": "style-cancel",
+        "label": "cancel",
+        "position": "bottom",
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "create": {
+      "name": "create",
+      "properties": {
+        "template": "create",
+        "styleName": "style-createwithinsearchinput",
+        "label": "create",
+        "position": "bottom",
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "edit": {
+      "name": "edit",
+      "properties": {
+        "template": "edit",
+        "styleName": "style-edit",
+        "label": "edit",
+        "position": "top",
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "search": {
+      "name": "search",
+      "properties": {
+        "template": "search",
+        "checkOnSubmit": true,
+        "styleName": "style-executecriteria",
+        "label": "search",
+        "position": "bottom",
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "save": {
+      "name": "save",
+      "properties": {
+        "template": "save",
+        "checkOnSubmit": true,
+        "styleName": "style-save",
+        "label": "save",
+        "messages": [
+          {
+            "key": "savedSuccessfully",
+            "content": "savedSuccessfully",
+            "eventCode": "",
+            "type": "Success",
+            "displayType": "Snackbar"
+          }
+        ],
+        "position": "bottom",
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "apply": {
+      "name": "apply",
+      "properties": {
+        "template": "apply",
+        "styleName": "style-apply",
+        "label": "apply",
+        "position": "top",
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "select": {
+      "name": "select",
+      "properties": {
+        "template": "select",
+        "styleName": "style-select",
+        "label": "select",
+        "position": "top",
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "showHistory": {
+      "name": "showHistory",
+      "properties": {
+        "template": "show-history",
+        "styleName": "style-showhistory",
+        "label": "showHistory",
+        "multipleRow": false,
+        "position": "row",
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "export": {
+      "name": "export",
+      "properties": {
+        "template": "export",
+        "styleName": "style-export",
+        "label": "export",
+        "position": "top",
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "editCollectionItem": {
+      "name": "editCollectionItem",
+      "properties": {
+        "template": "edit-item",
+        "styleName": "style-editcollectionitem",
+        "label": "edit",
+        "multipleRow": false,
+        "position": "row",
+        "parameters": {
+          "code": "code"
+        },
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "editItem": {
+      "name": "editItem",
+      "properties": {
+        "template": "edit-item",
+        "styleName": "style-editsearchresultitem",
+        "label": "edit",
+        "multipleRow": false,
+        "position": "row",
+        "parameters": {
+          "code": "code"
+        },
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "removeCollectionItem": {
+      "name": "removeCollectionItem",
+      "properties": {
+        "template": "delete-item",
+        "styleName": "style-removecollectionitem",
+        "label": "delete",
+        "multipleRow": false,
+        "position": "row",
+        "direction": "right",
+        "confirmationMessage": "Are you sure?"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "removeItem": {
+      "name": "removeItem",
+      "properties": {
+        "template": "delete-item",
+        "styleName": "style-removesearchresultitem",
+        "label": "delete",
+        "multipleRow": false,
+        "position": "row",
+        "direction": "right",
+        "confirmationMessage": "Are you sure?"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "viewCollectionItem": {
+      "name": "viewCollectionItem",
+      "properties": {
+        "template": "view-item",
+        "styleName": "style-viewcollectionitem",
+        "label": "view",
+        "multipleRow": false,
+        "position": "row",
+        "parameters": {
+          "code": "code"
+        },
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "viewItem": {
+      "name": "viewItem",
+      "properties": {
+        "template": "view-item",
+        "styleName": "style-viewsearchresultitem",
+        "label": "view",
+        "multipleRow": false,
+        "position": "row",
+        "parameters": {
+          "code": "code"
+        },
+        "direction": "right"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "removeCollectionItems": {
+      "name": "removeCollectionItems",
+      "properties": {
+        "template": "delete-items",
+        "styleName": "style-removecollectionitem",
+        "label": "delete",
+        "multipleRow": true,
+        "position": "row",
+        "direction": "right",
+        "confirmationMessage": "Are you sure?"
+      },
+      "type": "Button"
+    }
+  },
+  {
+    "removeItems": {
+      "name": "removeItems",
+      "properties": {
+        "template": "delete-items",
+        "styleName": "style-removecollectionitem",
+        "label": "delete",
+        "multipleRow": true,
+        "position": "row",
+        "direction": "right",
+        "confirmationMessage": "Are you sure?"
+      },
+      "type": "Button"
+    }
+  }
+]

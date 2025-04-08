@@ -1,0 +1,61 @@
+<div class="plm-input-validation">
+  @if (control && control.errors && (control.dirty || control.touched)) {
+    <div>
+      @if (control.errors.required) {
+        <div>
+          <p-message
+            severity="error"
+            i18n-text="message;invalidFieldRequired"
+            text="Field is required"
+          ></p-message>
+        </div>
+      }
+      @if (control.errors.minlength) {
+        <div>
+          <p-message
+            severity="error"
+            i18n-text="message;invalidMinLengthValue"
+            text="Min length is {{ control.errors.minlength.requiredLength }}"
+          ></p-message>
+        </div>
+      }
+      @if (control.errors.maxlength) {
+        <div>
+          <p-message
+            severity="error"
+            i18n-text="message;invalidMaxLengthValue"
+            text="Max length is {{ control.errors.maxlength.requiredLength }}"
+          ></p-message>
+        </div>
+      }
+      @if (control.errors.min) {
+        <div>
+          <p-message
+            severity="error"
+            i18n-text="message;invalidMinValue"
+            text="Min value is {{ control.errors.min.min }}"
+          ></p-message>
+        </div>
+      }
+      @if (control.errors.max) {
+        <div>
+          <p-message
+            severity="error"
+            i18n-text="message;invalidMaxValue"
+            text="Max Value is {{ control.errors.max.max }}"
+          ></p-message>
+        </div>
+      }
+      @if (control.errors?.pattern) {
+        <div>
+          <p-message severity="error" text="{{ pattern }}"></p-message>
+        </div>
+      }
+      @if (control.errors?.rules) {
+        <div>
+          <p-message severity="error" text="{{ rules }}"></p-message>
+        </div>
+      }
+    </div>
+  }
+</div>

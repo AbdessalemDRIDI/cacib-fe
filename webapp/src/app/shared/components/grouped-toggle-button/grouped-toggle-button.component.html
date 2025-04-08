@@ -1,0 +1,52 @@
+@for (field of listData | keyvalue; track field) {
+  <div class="vp-grouped-togglebutton-items">
+    @if (field?.key !== 'undefined') {
+      <h3>{{ field?.key }}</h3>
+    }
+    <p-selectButton
+      plmAccessibility
+      [options]="field.value"
+      [(ngModel)]="value"
+      (onChange)="onSelect($event)"
+      [style]="style"
+      [class]="class"
+      [disabled]="disabled"
+    >
+      <ng-template let-item pTemplate>
+        <div (click)="showConfirmationMessage(item)" class="vg-show-message-button">
+          @if (displayMode === 'card') {
+            <div class="mono-selection vp-select-card">
+              <i class="pi pi-check-circle"></i>
+              <i class="pi pi-circle-off"></i>
+              <div class="vp-select-card-content {{ horizontalAlignment }}">
+                @if (imgField) {
+                  <img [src]="getPropretyImage(item)" class="vp-select-card-img" />
+                }
+                @if (!imgField && defaultIcon) {
+                  <i class="vp-select-card-icon {{ defaultIcon }}"></i>
+                }
+                <p class="vp-select-card-label">{{ getPropretyLabel(item) }}</p>
+              </div>
+              <div class="vp-select-card-description">
+                <p>{{ getPropretyDescription(item) }}</p>
+              </div>
+            </div>
+          }
+          @if (displayMode === 'classic') {
+            <div class="vp-select-card">
+              <div class="vp-select-card-content">
+                @if (defaultIcon) {
+                  <i class="vp-select-card-icon {{ defaultIcon }}"></i>
+                }
+                <p class="vp-select-card-label">{{ getPropretyLabel(item) }}</p>
+                <div class="vp-select-card-description">
+                  <p>{{ getPropretyDescription(item) }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </ng-template>
+    </p-selectButton>
+  </div>
+}

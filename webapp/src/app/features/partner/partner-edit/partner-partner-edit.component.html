@@ -1,0 +1,240 @@
+<app-screen
+  [loaderShow]="loading()"
+  [showHeader]="true"
+  class="container-fluid pl-screen e2e-screen-edit"
+>
+  @if (data) {
+    <ng-template #headerTitle>
+      <h1>
+        {{ getDefaultTitle() }}
+      </h1>
+    </ng-template>
+  }
+  <ng-template #headerActions> </ng-template>
+  @if (data) {
+    <ng-template #bodyScreen>
+      <div class="vp-required-message" i18n="message;requiredMessage">
+        Required fields are marked with an asterisk (*)
+      </div>
+
+      <form [formGroup]="form">
+        <div class="card content-form e2e-content-form">
+          <div class="row">
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-4 id p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-4 mt-lg-0"
+            >
+              <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.id }">
+                <div class="vp-inputtext-wraper">
+                  <input
+                    class="e2e-text-field number"
+                    type="text"
+                    pInputText
+                    id="id"
+                    aria-label="Id"
+                    [readonly]=""
+                    formControlName="id"
+                    [required]="false"
+                    plmNumberFormatter
+                    oninput="this.value = this.value.replace(/[^-?\d.]|-(?=.*-)/g, '')"
+                  />
+                  <label i18n="@@UID__fld_Partner@id;partner;partner-edit" for="id"> Id </label>
+                </div>
+
+                <app-validator [control]="form?.get('id')"></app-validator>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-4 alias p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-4 mt-lg-0"
+            >
+              <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.alias }">
+                <div class="vp-inputtext-wraper">
+                  <input
+                    class="e2e-text-field input"
+                    type="text"
+                    pInputText
+                    id="alias"
+                    aria-label="Alias"
+                    [readonly]=""
+                    formControlName="alias"
+                    [required]="false"
+                  />
+                  <label i18n="@@UID__fld_Partner@alias;partner;partner-edit" for="alias">
+                    Alias
+                  </label>
+                </div>
+
+                <app-validator [control]="form?.get('alias')"></app-validator>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-4 type p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-0 mt-lg-0"
+            >
+              <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.type }">
+                <div class="vp-inputtext-wraper">
+                  <input
+                    class="e2e-text-field input"
+                    type="text"
+                    pInputText
+                    id="type"
+                    aria-label="Type"
+                    [readonly]=""
+                    formControlName="type"
+                    [required]="false"
+                  />
+                  <label i18n="@@UID__fld_Partner@type;partner;partner-edit" for="type">
+                    Type
+                  </label>
+                </div>
+
+                <app-validator [control]="form?.get('type')"></app-validator>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-4 direction p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-4"
+            >
+              <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.direction }">
+                <div class="vp-inputtext-wraper">
+                  <input
+                    class="e2e-text-field input"
+                    type="text"
+                    pInputText
+                    id="direction"
+                    aria-label="Direction"
+                    [readonly]=""
+                    formControlName="direction"
+                    [required]="false"
+                  />
+                  <label i18n="@@UID__fld_Partner@direction;partner;partner-edit" for="direction">
+                    Direction
+                  </label>
+                </div>
+
+                <app-validator [control]="form?.get('direction')"></app-validator>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-4 application p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-4"
+            >
+              <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.application }">
+                <div class="vp-inputtext-wraper">
+                  <input
+                    class="e2e-text-field input"
+                    type="text"
+                    pInputText
+                    id="application"
+                    aria-label="Application"
+                    [readonly]=""
+                    formControlName="application"
+                    [required]="false"
+                  />
+                  <label
+                    i18n="@@UID__fld_Partner@application;partner;partner-edit"
+                    for="application"
+                  >
+                    Application
+                  </label>
+                </div>
+
+                <app-validator [control]="form?.get('application')"></app-validator>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-4 processed-flow-type p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-0"
+            >
+              <div
+                [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.processedFlowType }"
+              >
+                <div class="vp-inputtext-wraper">
+                  <input
+                    class="e2e-text-field input"
+                    type="text"
+                    pInputText
+                    id="processedflowtype"
+                    aria-label="Processed Flow Type"
+                    [readonly]=""
+                    formControlName="processedFlowType"
+                    [required]="false"
+                  />
+                  <label
+                    i18n="@@UID__fld_Partner@processedFlowType;partner;partner-edit"
+                    for="processedflowtype"
+                  >
+                    Processed Flow Type
+                  </label>
+                </div>
+
+                <app-validator [control]="form?.get('processedFlowType')"></app-validator>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-4 description p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-4"
+            >
+              <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.description }">
+                <div class="vp-inputtext-wraper">
+                  <input
+                    class="e2e-text-field input"
+                    type="text"
+                    pInputText
+                    id="description"
+                    aria-label="Description"
+                    [readonly]=""
+                    formControlName="description"
+                    [required]="false"
+                  />
+                  <label
+                    i18n="@@UID__fld_Partner@description;partner;partner-edit"
+                    for="description"
+                  >
+                    Description
+                  </label>
+                </div>
+
+                <app-validator [control]="form?.get('description')"></app-validator>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+  }
+  @if (!loading() && initialized && !data) {
+    <ng-template #bodyScreen>
+      <div i18n="message;msgNoDataFound">No data to display</div>
+    </ng-template>
+  }
+  <ng-template #footerActions>
+    <p-button
+      class="plm-button e2e-button style-cancel"
+      i18n-label="@@UID__act_cancel;partner;partner-edit"
+      label="Cancel"
+      icon="pi pi-times"
+      iconPos="left"
+      ariaLabel="Cancel"
+      (onClick)="doCancel()"
+    >
+    </p-button>
+
+    <p-button
+      class="plm-button e2e-button style-save"
+      i18n-label="@@UID__act_save;partner;partner-edit"
+      label="Save"
+      icon="pi pi-save"
+      iconPos="left"
+      [disabled]="!this.isFormValid()"
+      ariaLabel="Save"
+      (onClick)="doSave()"
+    >
+    </p-button>
+  </ng-template>
+</app-screen>
+<!-- to display screens with navigation type 'dialog'-->
+<ng-template #dialogContainer></ng-template>
+
+<!-- to display screens with navigation type 'call'-->
+<ng-template #callContainer></ng-template>

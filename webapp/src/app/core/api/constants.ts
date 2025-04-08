@@ -1,0 +1,1 @@
+export const LOGOUT_ACTIVE_TABS = 'LOGOUT_ACTIVE_TABS';

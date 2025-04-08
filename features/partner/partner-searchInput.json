@@ -1,0 +1,203 @@
+{
+  "name": "partner-searchInput",
+  "featureName": "partner",
+  "title": "Search Partner",
+  "showTitle": false,
+  "template": "searchInput",
+  "componentsBreakpoints": {
+    "xs": "12",
+    "sm": "12",
+    "md": "6",
+    "lg": "4"
+  },
+  "components": [
+    {
+      "name": "id",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "mandatory": false,
+        "defaultOperator": "==",
+        "label": "Id"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "3"
+      }
+    },
+    {
+      "name": "alias",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "mandatory": false,
+        "defaultOperator": "==",
+        "label": "Alias"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "3"
+      }
+    },
+    {
+      "name": "type",
+      "type": "TextField",
+      "properties": {
+        "showLabel": true,
+        "mandatory": false,
+        "defaultOperator": "==",
+        "label": "Type"
+      },
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "6",
+        "lg": "3"
+      }
+    },
+    {
+      "type": "Filters",
+      "properties": {
+        "label": "More filters",
+        "alignment": "right",
+        "styleName": "basic third",
+        "removeSpace": "right",
+        "verticalAlignment": "top"
+      },
+      "componentsBreakpoints": {
+        "xs": 12,
+        "sm": 12,
+        "md": 6,
+        "lg": 4
+      },
+      "name": "more-filters",
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "2",
+        "lg": "2"
+      },
+      "components": [
+        {
+          "name": "direction",
+          "type": "TextField",
+          "properties": {
+            "showLabel": true,
+            "mandatory": false,
+            "defaultOperator": "==",
+            "label": "Direction"
+          },
+          "breakpoints": {
+            "xs": "12",
+            "sm": "12",
+            "md": "6",
+            "lg": "4"
+          }
+        },
+        {
+          "name": "application",
+          "type": "TextField",
+          "properties": {
+            "showLabel": true,
+            "mandatory": false,
+            "defaultOperator": "==",
+            "label": "Application"
+          },
+          "breakpoints": {
+            "xs": "12",
+            "sm": "12",
+            "md": "6",
+            "lg": "4"
+          }
+        },
+        {
+          "name": "processedFlowType",
+          "type": "TextField",
+          "properties": {
+            "showLabel": true,
+            "mandatory": false,
+            "defaultOperator": "==",
+            "label": "Processed Flow Type"
+          },
+          "breakpoints": {
+            "xs": "12",
+            "sm": "12",
+            "md": "6",
+            "lg": "4"
+          }
+        },
+        {
+          "name": "description",
+          "type": "TextField",
+          "properties": {
+            "showLabel": true,
+            "mandatory": false,
+            "defaultOperator": "==",
+            "label": "Description"
+          },
+          "breakpoints": {
+            "xs": "12",
+            "sm": "12",
+            "md": "6",
+            "lg": "4"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Button",
+      "properties": {
+        "additionalAttributes": [
+          {
+            "type": "static"
+          }
+        ],
+        "label": "",
+        "template": "search",
+        "verticalAlignment": "bottom",
+        "icon": "pi pi-search",
+        "styleName": "",
+        "screens": [
+          {
+            "navigationType": "call",
+            "path": "/partner/partner-search"
+          }
+        ],
+        "visibleCondition": {
+          "hideColumn": false
+        },
+        "horizontalAlignment": "right",
+        "position": "top",
+        "removeSpace": "both",
+        "width": "100%"
+      },
+      "name": "search",
+      "breakpoints": {
+        "xs": "12",
+        "sm": "12",
+        "md": "1",
+        "lg": "1"
+      }
+    }
+  ],
+  "actions": [],
+  "screen": {
+    "autoRun": true,
+    "navigationType": "call",
+    "path": "/partner/partner-search"
+  },
+  "styleName": "test",
+  "enableRequiredField": false,
+  "displayNavigationRight": false,
+  "leftResponsiveConfig": {
+    "extraSmall": "col-xs-4",
+    "small": "col-sm-4",
+    "medium": "col-md-4",
+    "large": "col-lg-4"
+  },
+  "modelName": "Partner"
+}

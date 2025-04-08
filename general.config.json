@@ -1,0 +1,28 @@
+{
+  "alerts": {
+    "visible": false
+  },
+  "security": {
+    "hideChangePassword": false,
+    "provider": {
+      "type": "jwt"
+    },
+    "idleSessionTimeout": 15
+  },
+  "languages": [
+    "en"
+  ],
+  "todoList": {
+    "visible": false,
+    "hideEmptyNodes": false
+  },
+  "maxAllowedScreens": 10,
+  "disableMultiWorkspace": true,
+  "disableAutoHideMessages": false,
+  "breadCrumb": {
+    "visible": false
+  },
+  "obfuscation": {
+    "enable": false
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "module": "ES2022",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "lib": ["ES2022", "dom"],
+    "useDefineForClassFields": false,
+    "skipLibCheck": true,
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@env/*": ["src/environments/*"],
+      "@core/*": ["src/app/core/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@auth/*": ["src/app/auth/*"],
+      "@models/*": ["src/app/core/models/*"],
+      "@services-api/*": ["src/app/core/services-api/*"],
+      "@features/*": ["src/app/features/*"],
+      "@services/*": ["src/app/core/services/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true
+  }
+}

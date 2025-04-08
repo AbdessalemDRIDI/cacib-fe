@@ -1,0 +1,16 @@
+<p-dialog
+  modal="true"
+  [blockScroll]="true"
+  [(visible)]="displayDialog"
+  [closable]="true"
+  [focusOnShow]="false"
+  (onHide)="hide()"
+  tabindex="0"
+  plmAccessibility
+  appendTo="body"
+  styleClass="screen-dialog"
+>
+  <p-header></p-header>
+  <ng-template #content></ng-template>
+  <p-footer></p-footer>
+</p-dialog>

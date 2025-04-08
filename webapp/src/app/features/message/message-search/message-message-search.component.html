@@ -1,0 +1,301 @@
+<app-screen
+  [showHeader]="true"
+  leftResponsiveConfig="col-xs-4 col-sm-4 col-md-4 col-lg-4 pl-0"
+  rightResponsiveConfig="col-8 col-sm-8 col-md-8 col-lg-8 pr-0 pl-0"
+  [loaderShow]="loading()"
+  styleName="container-fluid pl-screen pl-screen-sr e2e-search "
+>
+  <ng-template #headerTitle>
+    <h1>
+      {{ getDefaultTitle() }}
+    </h1>
+  </ng-template>
+  <ng-template #headerActions>
+    <p-button
+      class="plm-button e2e-button style-createwithinsearchinput"
+      i18n-label="@@UID__act_create;message;message-search"
+      label="Create"
+      icon="pi pi-plus"
+      iconPos="left"
+      ariaLabel="Create"
+      (onClick)="doCreate()"
+    >
+    </p-button>
+
+    <app-export-data
+      class="plm-button export-button style-export e2e-button"
+      icon="pi pi-download"
+      label="Export"
+      (export)="doExport($event.keys, $event.dataToExport, $event.format)"
+      i18n-label="@@UID__act_export;message;message-search"
+      [disabled]=""
+    >
+    </app-export-data>
+  </ng-template>
+  <ng-template #bodyScreen>
+    <div class="card">
+      <p-table
+        [value]="value$ | async"
+        [responsive]="true"
+        [resizableColumns]="true"
+        columnResizeMode="expand"
+        [(selection)]="selectedItems"
+        responsiveLayout="scroll"
+        selectionMode="single"
+        [autoLayout]="true"
+        sortMode="multiple"
+        [lazy]="true"
+        (onLazyLoad)="onLazyLoad($event)"
+        [lazyLoadOnInit]="false"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th
+              tabindex="0"
+              scope="col"
+              pResizableColumn
+              hideColumn="id"
+              class="ui-xs"
+              pSortableColumn="id"
+              [style.width]="'auto'"
+            >
+              <span i18n="@@UID__fld_Message@id;message;message-search">Id</span>
+
+              <p-sortIcon field="id"></p-sortIcon>
+            </th>
+            <th
+              tabindex="0"
+              scope="col"
+              pResizableColumn
+              hideColumn="messageContent"
+              class="ui-xs"
+              pSortableColumn="messageContent"
+              [style.width]="'auto'"
+            >
+              <span i18n="@@UID__fld_Message@messageContent;message;message-search"
+                >Message Content</span
+              >
+
+              <p-sortIcon field="messageContent"></p-sortIcon>
+            </th>
+            <th
+              tabindex="0"
+              scope="col"
+              pResizableColumn
+              hideColumn="messageType"
+              class="ui-xs"
+              pSortableColumn="messageType"
+              [style.width]="'auto'"
+            >
+              <span i18n="@@UID__fld_Message@messageType;message;message-search">Message Type</span>
+
+              <p-sortIcon field="messageType"></p-sortIcon>
+            </th>
+            <th
+              tabindex="0"
+              scope="col"
+              pResizableColumn
+              hideColumn="dateReceived"
+              class="ui-xs"
+              pSortableColumn="dateReceived"
+              [style.width]="'auto'"
+            >
+              <span i18n="@@UID__fld_Message@dateReceived;message;message-search"
+                >Date Received</span
+              >
+
+              <p-sortIcon field="dateReceived"></p-sortIcon>
+            </th>
+            <th
+              tabindex="0"
+              scope="col"
+              pResizableColumn
+              hideColumn="status"
+              class="ui-xs"
+              pSortableColumn="status"
+              [style.width]="'auto'"
+            >
+              <span i18n="@@UID__fld_Message@status;message;message-search">Status</span>
+
+              <p-sortIcon field="status"></p-sortIcon>
+            </th>
+            <th
+              tabindex="0"
+              scope="col"
+              pFrozenColumn
+              alignFrozen="right"
+              hideColumn="Container-55038"
+              class="ui-xs"
+              pSortableColumn=""
+              [style.width]="'100px'"
+            >
+              <span i18n="@@UID__fld_Message@container55038;message;message-search">Actions</span>
+
+              <p-sortIcon field="Container-55038"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
+          <tr [pContextMenuRow]="rowData" [pSelectableRow]="rowData">
+            <td
+              tabindex="0"
+              plmTruncatedCell
+              [pTooltip]="rowData?.id | numberPipe"
+              [escape]="false"
+              class="e2e-table ui-xs"
+              hideColumn="id"
+            >
+              <span class="ui-column-title e2e-ui-column-title"></span>
+              {{ rowData?.id | numberPipe }}
+            </td>
+
+            <td
+              tabindex="0"
+              plmTruncatedCell
+              [pTooltip]="rowData?.messageContent"
+              [escape]="false"
+              class="e2e-table ui-xs"
+              hideColumn="messageContent"
+            >
+              <span class="ui-column-title e2e-ui-column-title"></span>
+              {{ rowData?.messageContent }}
+            </td>
+
+            <td
+              tabindex="0"
+              plmTruncatedCell
+              [pTooltip]="rowData?.messageType"
+              [escape]="false"
+              class="e2e-table ui-xs"
+              hideColumn="messageType"
+            >
+              <span class="ui-column-title e2e-ui-column-title"></span>
+              {{ rowData?.messageType }}
+            </td>
+
+            <td
+              tabindex="0"
+              plmTruncatedCell
+              [pTooltip]="rowData?.dateReceived | gridPipe: 'date' : '' : ''"
+              [escape]="false"
+              class="e2e-table ui-xs"
+              hideColumn="dateReceived"
+            >
+              <span class="ui-column-title e2e-ui-column-title"></span>
+              {{ rowData?.dateReceived | gridPipe: 'date' : '' : '' }}
+            </td>
+
+            <td
+              tabindex="0"
+              plmTruncatedCell
+              [pTooltip]="rowData?.status"
+              [escape]="false"
+              class="e2e-table ui-xs"
+              hideColumn="status"
+            >
+              <span class="ui-column-title e2e-ui-column-title"></span>
+              {{ rowData?.status }}
+            </td>
+
+            <td
+              pFrozenColumn
+              alignFrozen="right"
+              class="vp-col-container-55038 actions-footer plm-container e2e-container"
+            >
+              <div class="vp-container-body">
+                @if (rowData && !rowData.isGrp) {
+                  <p-button
+                    class="plm-button e2e-inline-button"
+                    i18n-label="@@UID__fld_Message@edit;message;message-search"
+                    icon="pi pi-pencil"
+                    ariaLabel="Edit"
+                    label="Edit"
+                    [disabled]=""
+                    (onClick)="doEdit(rowData)"
+                  >
+                  </p-button>
+                }
+
+                @if (rowData && !rowData.isGrp) {
+                  <p-button
+                    class="plm-button e2e-inline-button"
+                    i18n-label="@@UID__fld_Message@view;message;message-search"
+                    icon="pi pi-eye"
+                    ariaLabel="View"
+                    label="View"
+                    [disabled]=""
+                    (onClick)="doView(rowData)"
+                  >
+                  </p-button>
+                }
+
+                @if (rowData && !rowData.isGrp) {
+                  <p-button
+                    class="plm-button e2e-inline-button"
+                    i18n-label="@@UID__fld_Message@delete;message;message-search"
+                    icon="pi pi-trash"
+                    ariaLabel="Delete"
+                    label="Delete"
+                    [disabled]=""
+                    (onClick)="doDelete(rowData)"
+                  >
+                  </p-button>
+                }
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td [attr.colspan]="7" class="text-align-ui-l e2e-text-align">
+              @if (!loading() && (value$ | async)?.length === 0) {
+                <div i18n="message;msgNoResultsFound" tabindex="0">No results were found</div>
+              }
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+      @if (totalItems() > pageSize()) {
+        <p-paginator
+          class="p-paginator-bottom"
+          #paginator
+          [rows]="pageSize()"
+          [totalRecords]="totalItems()"
+          [rowsPerPageOptions]="[10, 15, 20, 50, 100]"
+          pageLinkSize="3"
+          [templateRight]="status"
+          [templateLeft]="colsSelection"
+          (onPageChange)="paginate($event)"
+        >
+        </p-paginator>
+      }
+      <ng-template #status let-state>
+        <div class="paginator-right-display e2e-paginator-right-display">
+          <span i18n="message;labelPage">Page</span>&nbsp;{{ currentPage() }} /
+          {{ getNumberOfPage(totalItems(), pageSize()) }}&nbsp;({{ totalItems() }})&nbsp;<span
+            i18n="message;labelItems"
+            >items</span
+          >
+        </div>
+      </ng-template>
+      <ng-template #colsSelection> </ng-template>
+    </div>
+  </ng-template>
+  <ng-template #outlets>
+    <!-- to display screens with navigation type 'dialog'-->
+    <ng-template #dialogContainer></ng-template>
+
+    <!-- to display screens with navigation type 'call'-->
+    <ng-template #callContainer></ng-template>
+    <!-- to display confirmation message-->
+    <p-confirmDialog
+      class="plm-confirm-dialog e2e-confirm-dialog"
+      modal="modal"
+      key="messagemessageSearch"
+    >
+    </p-confirmDialog>
+  </ng-template>
+</app-screen>

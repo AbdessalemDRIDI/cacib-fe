@@ -1,0 +1,378 @@
+<app-screen
+  [showHeader]="false"
+  [loaderShow]="loading()"
+  leftResponsiveConfig="col-xs-4 col-sm-4 col-md-4 col-lg-4 pl-0"
+  rightResponsiveConfig="col-8 col-sm-8 col-md-8 col-lg-8 pr-0 pl-0"
+  styleName="container-fluid pl-screen pl-screen-si e2e-screen-si test"
+>
+  <ng-template #headerActions> </ng-template>
+  @if (data$ | async) {
+    <ng-template #bodyScreen>
+      <form [formGroup]="form">
+        <div class="card e2e-card content-form">
+          <div class="row">
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-3 id p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-4 mt-lg-0"
+            >
+              <div class="vp-filter-with-operator">
+                <div class="vp-filter-component">
+                  <p-dropdown
+                    plmAccessibility
+                    styleClass="vp-filter-operator e2e-filter-operator"
+                    appendTo="body"
+                    ariaLabel="idOperator"
+                    [options]="[] | operator: 'number'"
+                    formControlName="idOperator"
+                  >
+                  </p-dropdown>
+
+                  <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.id }">
+                    <div class="vp-inputtext-wraper">
+                      <input
+                        class="e2e-text-field number"
+                        type="text"
+                        pInputText
+                        id="id"
+                        aria-label="Id"
+                        [readonly]=""
+                        formControlName="id"
+                        [required]="false"
+                        plmNumberFormatter
+                        oninput="this.value = this.value.replace(/[^-?\d.]|-(?=.*-)/g, '')"
+                      />
+                      <label i18n="@@UID__fld_Partner@id;partner;partner-search-input" for="id">
+                        Id
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="vp-filter-validation">
+                  <app-validator [control]="form?.get('id')"></app-validator>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-3 alias p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-4 mt-lg-0"
+            >
+              <div class="vp-filter-with-operator">
+                <div class="vp-filter-component">
+                  <p-dropdown
+                    plmAccessibility
+                    styleClass="vp-filter-operator e2e-filter-operator"
+                    appendTo="body"
+                    ariaLabel="aliasOperator"
+                    [options]="[] | operator: 'string'"
+                    formControlName="aliasOperator"
+                  >
+                  </p-dropdown>
+
+                  <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.alias }">
+                    <div class="vp-inputtext-wraper">
+                      <input
+                        class="e2e-text-field input"
+                        type="text"
+                        pInputText
+                        id="alias"
+                        aria-label="Alias"
+                        [readonly]=""
+                        formControlName="alias"
+                        [required]="false"
+                      />
+                      <label
+                        i18n="@@UID__fld_Partner@alias;partner;partner-search-input"
+                        for="alias"
+                      >
+                        Alias
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="vp-filter-validation">
+                  <app-validator [control]="form?.get('alias')"></app-validator>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-6 col-lg-3 type p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-4 mt-lg-0"
+            >
+              <div class="vp-filter-with-operator">
+                <div class="vp-filter-component">
+                  <p-dropdown
+                    plmAccessibility
+                    styleClass="vp-filter-operator e2e-filter-operator"
+                    appendTo="body"
+                    ariaLabel="typeOperator"
+                    [options]="[] | operator: 'string'"
+                    formControlName="typeOperator"
+                  >
+                  </p-dropdown>
+
+                  <div [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.type }">
+                    <div class="vp-inputtext-wraper">
+                      <input
+                        class="e2e-text-field input"
+                        type="text"
+                        pInputText
+                        id="type"
+                        aria-label="Type"
+                        [readonly]=""
+                        formControlName="type"
+                        [required]="false"
+                      />
+                      <label i18n="@@UID__fld_Partner@type;partner;partner-search-input" for="type">
+                        Type
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="vp-filter-validation">
+                  <app-validator [control]="form?.get('type')"></app-validator>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-2 col-lg-2 more-filters vp-valign-top p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-0 mt-lg-0"
+            >
+              <vp-filter
+                plmAccessibility
+                [form]="form"
+                clearFilterLabel="Clear Filters"
+                i18n-clearFilterLabel="message;clearFilterLabel"
+                searchLabel="See results"
+                i18n-searchLabel="message;searchFilterLabel"
+                cancelLabel="Cancel Filters"
+                i18n-cancelLabel="message;cancelFilterLabel"
+                (searchAdvancedFilters)="doAdvancedFilters($event)"
+                label="More filters"
+                i18n-label="@@UID__fld_Partner@moreFilters;partner;partner-search-input"
+                styleClass="basic third"
+                class="right"
+              >
+                <div class="row e2e-row">
+                  <div
+                    class="e2e-group col-12 col-sm-12 col-md-6 col-lg-4 direction p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-4 mt-lg-0"
+                  >
+                    <div class="vp-filter-with-operator vp-component-text-field">
+                      <div class="vp-filter-component">
+                        <p-dropdown
+                          plmAccessibility
+                          styleClass="vp-filter-operator e2e-filter-operator"
+                          appendTo="body"
+                          ariaLabel="directionOperator"
+                          [options]="[] | operator: 'string'"
+                          formControlName="directionOperator"
+                        >
+                        </p-dropdown>
+
+                        <div
+                          [ngClass]="{ 'input-field vp-inputtext': true, filled: data?.direction }"
+                        >
+                          <div class="vp-inputtext-wraper">
+                            <input
+                              class="e2e-text-field input"
+                              type="text"
+                              pInputText
+                              id="direction"
+                              aria-label="Direction"
+                              [readonly]=""
+                              formControlName="direction"
+                              [required]="false"
+                            />
+                            <label
+                              i18n="@@UID__fld_Partner@direction;partner;partner-search-input"
+                              for="direction"
+                            >
+                              Direction
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vp-filter-validation">
+                        <app-validator [control]="form?.get('direction')"></app-validator>
+                      </div>
+                    </div>
+
+                    <app-validator [control]="form?.get('direction')"></app-validator>
+                  </div>
+
+                  <div
+                    class="e2e-group col-12 col-sm-12 col-md-6 col-lg-4 application p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-4 mt-lg-0"
+                  >
+                    <div class="vp-filter-with-operator vp-component-text-field">
+                      <div class="vp-filter-component">
+                        <p-dropdown
+                          plmAccessibility
+                          styleClass="vp-filter-operator e2e-filter-operator"
+                          appendTo="body"
+                          ariaLabel="applicationOperator"
+                          [options]="[] | operator: 'string'"
+                          formControlName="applicationOperator"
+                        >
+                        </p-dropdown>
+
+                        <div
+                          [ngClass]="{
+                            'input-field vp-inputtext': true,
+                            filled: data?.application,
+                          }"
+                        >
+                          <div class="vp-inputtext-wraper">
+                            <input
+                              class="e2e-text-field input"
+                              type="text"
+                              pInputText
+                              id="application"
+                              aria-label="Application"
+                              [readonly]=""
+                              formControlName="application"
+                              [required]="false"
+                            />
+                            <label
+                              i18n="@@UID__fld_Partner@application;partner;partner-search-input"
+                              for="application"
+                            >
+                              Application
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vp-filter-validation">
+                        <app-validator [control]="form?.get('application')"></app-validator>
+                      </div>
+                    </div>
+
+                    <app-validator [control]="form?.get('application')"></app-validator>
+                  </div>
+
+                  <div
+                    class="e2e-group col-12 col-sm-12 col-md-6 col-lg-4 processed-flow-type p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-0 mt-lg-0"
+                  >
+                    <div class="vp-filter-with-operator vp-component-text-field">
+                      <div class="vp-filter-component">
+                        <p-dropdown
+                          plmAccessibility
+                          styleClass="vp-filter-operator e2e-filter-operator"
+                          appendTo="body"
+                          ariaLabel="processedFlowTypeOperator"
+                          [options]="[] | operator: 'string'"
+                          formControlName="processedFlowTypeOperator"
+                        >
+                        </p-dropdown>
+
+                        <div
+                          [ngClass]="{
+                            'input-field vp-inputtext': true,
+                            filled: data?.processedFlowType,
+                          }"
+                        >
+                          <div class="vp-inputtext-wraper">
+                            <input
+                              class="e2e-text-field input"
+                              type="text"
+                              pInputText
+                              id="processedflowtype"
+                              aria-label="Processed Flow Type"
+                              [readonly]=""
+                              formControlName="processedFlowType"
+                              [required]="false"
+                            />
+                            <label
+                              i18n="
+                                @@UID__fld_Partner@processedFlowType;partner;partner-search-input"
+                              for="processedflowtype"
+                            >
+                              Processed Flow Type
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vp-filter-validation">
+                        <app-validator [control]="form?.get('processedFlowType')"></app-validator>
+                      </div>
+                    </div>
+
+                    <app-validator [control]="form?.get('processedFlowType')"></app-validator>
+                  </div>
+
+                  <div
+                    class="e2e-group col-12 col-sm-12 col-md-6 col-lg-4 description p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-4"
+                  >
+                    <div class="vp-filter-with-operator vp-component-text-field">
+                      <div class="vp-filter-component">
+                        <p-dropdown
+                          plmAccessibility
+                          styleClass="vp-filter-operator e2e-filter-operator"
+                          appendTo="body"
+                          ariaLabel="descriptionOperator"
+                          [options]="[] | operator: 'string'"
+                          formControlName="descriptionOperator"
+                        >
+                        </p-dropdown>
+
+                        <div
+                          [ngClass]="{
+                            'input-field vp-inputtext': true,
+                            filled: data?.description,
+                          }"
+                        >
+                          <div class="vp-inputtext-wraper">
+                            <input
+                              class="e2e-text-field input"
+                              type="text"
+                              pInputText
+                              id="description"
+                              aria-label="Description"
+                              [readonly]=""
+                              formControlName="description"
+                              [required]="false"
+                            />
+                            <label
+                              i18n="@@UID__fld_Partner@description;partner;partner-search-input"
+                              for="description"
+                            >
+                              Description
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vp-filter-validation">
+                        <app-validator [control]="form?.get('description')"></app-validator>
+                      </div>
+                    </div>
+
+                    <app-validator [control]="form?.get('description')"></app-validator>
+                  </div>
+                </div>
+              </vp-filter>
+            </div>
+
+            <div
+              class="col-12 col-sm-12 col-md-1 col-lg-1 search vp-valign-bottom p-0 pr-xs-0 pl-xs-0 pr-sm-0 pl-sm-0 pr-md-0 pl-md-0 pr-lg-0 pl-lg-0 mt-lg-0"
+            >
+              <p-button
+                class="plm-button e2e-button right"
+                i18n-label="@@UID__act_search;partner;partner-search-input"
+                icon="pi pi-search"
+                [disabled]="!this.isFormValid()"
+                [style]="{ width: '100%' }"
+                ariaLabel="Icon Button"
+                (onClick)="doSearch()"
+              >
+              </p-button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+  }
+  <ng-template #outlets>
+    <!-- to display screens with navigation type 'dialog'-->
+    <ng-template #dialogContainer></ng-template>
+
+    <!-- to display screens with navigation type 'call'-->
+    <ng-template #callContainer></ng-template>
+  </ng-template>
+</app-screen>

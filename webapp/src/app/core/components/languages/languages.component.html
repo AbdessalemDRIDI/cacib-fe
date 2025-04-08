@@ -1,0 +1,22 @@
+@if (languages() && languages().length > 0) {
+  <p-dropdown
+    [options]="languages()"
+    styleClass="plm-languages-switcher"
+    (ngModelChange)="switchLanguage($event)"
+    [ngModel]="currentLanguage()"
+    placeholder="Select a Language"
+  >
+    <ng-template pTemplate="selectedItem">
+      <div class="d-flex align-items-center gap-2">
+        <img [src]="'assets/img/flags/' + currentLanguage() + '.png'" class="language-flag" />
+        <div>{{ currentLanguage() }}</div>
+      </div>
+    </ng-template>
+    <ng-template let-item pTemplate="item">
+      <div class="d-flex align-items-center gap-2">
+        <img [src]="'assets/img/flags/' + item.value + '.png'" class="language-flag" />
+        <div>{{ item.value }}</div>
+      </div>
+    </ng-template>
+  </p-dropdown>
+}

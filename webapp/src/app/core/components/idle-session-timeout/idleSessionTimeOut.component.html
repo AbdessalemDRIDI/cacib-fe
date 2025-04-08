@@ -1,0 +1,31 @@
+<p-dialog
+  [(visible)]="showDialog"
+  [modal]="true"
+  [closable]="false"
+  class="idle-custom-dialog"
+  plmAccessibility
+>
+  <div class="idle-title-icon-container">
+    <img class="idle-center-icon" src="assets/img/idle-alarm-alert.png" />
+    <h2 class="idle-title-text">{{ idleTitle }}</h2>
+  </div>
+  <p class="idle-centered-message-text idle-button-large-message">
+    {{ idleAutoDisconnectMessagePart1 }} {{ countdown }} {{ idleAutoDisconnectMessagePart2 }}
+  </p>
+  <p class="idle-centered-message-text">{{ idleActionMessage }}</p>
+  <p-footer>
+    <div class="idle-button-container">
+      <p-button
+        class="plm-button e2e-button secondary idle-button-separated"
+        (click)="signOut()"
+        label="{{ idleSignOut }}"
+      ></p-button>
+      <p-button
+        #continueButton
+        class="plm-button e2e-button primary idle-button-separated"
+        (click)="staySignedIn()"
+        label="{{ idleSignIn }}"
+      ></p-button>
+    </div>
+  </p-footer>
+</p-dialog>

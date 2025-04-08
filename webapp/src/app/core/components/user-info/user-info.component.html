@@ -1,0 +1,21 @@
+<app-user-details [name]="name()" (avatarClick)="menu.toggle($event)"></app-user-details>
+<p-menu styleClass="user-info-modal" appendTo="body" #menu [model]="items" [popup]="true">
+  <ng-template pTemplate="start">
+    <div class="avatar-container">
+      <app-user-details [name]="name()"></app-user-details>
+    </div>
+  </ng-template>
+</p-menu>
+<p-dialog
+  header="Change Password"
+  i18n-header="message;changePassword"
+  modal="true"
+  appendTo="body"
+  styleClass="plm-change-password-dialog"
+  [(visible)]="showChangePasswd"
+  (onHide)="hideChangePasswd()"
+  class="plm-change-password-dialog"
+  plmAccessibility
+>
+  <app-change-password (hideDialog)="hideChangePasswd()"></app-change-password>
+</p-dialog>

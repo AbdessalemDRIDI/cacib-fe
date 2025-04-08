@@ -1,0 +1,17 @@
+{
+  "@palmyra/generator-palmyra-frontend": {
+    "currentDir": "/opt/shared/palmyra/adridict/2214057/frontapplicationdemo-frontend",
+    "configDir": "/opt/shared/palmyra/adridict/2214057/frontapplicationdemo-frontend",
+    "outputDir": "/opt/shared/palmyra/adridict/2214057/frontapplicationdemo-frontend/webapp",
+    "no-api": false,
+    "swaggerMode": true,
+    "override-files": {
+      "override-files": {
+        "force": false,
+        "files": "",
+        "categories": ""
+      }
+    },
+    "lastGeneration": 1744070976001
+  }
+}

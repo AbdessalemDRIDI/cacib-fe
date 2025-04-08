@@ -1,0 +1,142 @@
+<app-screen
+  [showHeader]="showHeader"
+  [showFooter]="showFooter"
+  [loaderShow]="loading()"
+  class="container-fluid pl-screen pl-screen-view e2e-screen-view"
+>
+  @if (data$ | async) {
+    <ng-template #headerTitle>
+      <h1>
+        {{ getDefaultTitle() }}
+      </h1>
+    </ng-template>
+  }
+  <ng-template #headerActions>
+    <p-button
+      class="plm-button e2e-button style-edit"
+      i18n-label="@@UID__act_edit;message;message-view"
+      label="Modify"
+      icon="pi pi-eye"
+      iconPos="left"
+      ariaLabel="Modify"
+      (onClick)="doEdit()"
+    >
+    </p-button>
+  </ng-template>
+  @if (data$ | async) {
+    <ng-template #bodyScreen>
+      <div class="card e2e-card content-form">
+        <div class="row">
+          <div
+            class="col-12 col-sm-12 col-md-6 col-lg-4 id p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-4 mt-lg-0"
+          >
+            <div class="vp-label label-container e2e-label-container" tabindex="0">
+              <div
+                class="label-title e2e-label-title"
+                i18n="@@UID__fld_Message@id;message;message-view"
+              >
+                Id
+              </div>
+
+              <div class="label-value e2e-label-value number label-field">
+                <span class="vp-label-text">{{ data?.id | numberPipe }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-sm-12 col-md-6 col-lg-4 message-content p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-4 mt-lg-0"
+          >
+            <div class="vp-label label-container e2e-label-container" tabindex="0">
+              <div
+                class="label-title e2e-label-title"
+                i18n="@@UID__fld_Message@messageContent;message;message-view"
+              >
+                Message Content
+              </div>
+
+              <div class="label-value e2e-label-value label-field">
+                <span class="vp-label-text">{{ data?.messageContent }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-sm-12 col-md-6 col-lg-4 message-type p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-0 mt-lg-0"
+          >
+            <div class="vp-label label-container e2e-label-container" tabindex="0">
+              <div
+                class="label-title e2e-label-title"
+                i18n="@@UID__fld_Message@messageType;message;message-view"
+              >
+                Message Type
+              </div>
+
+              <div class="label-value e2e-label-value label-field">
+                <span class="vp-label-text">{{ data?.messageType }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-sm-12 col-md-6 col-lg-4 date-received p-0 pr-xs-0 pr-sm-0 pr-md-0 pr-lg-4"
+          >
+            <div class="vp-label label-container e2e-label-container" tabindex="0">
+              <div
+                class="label-title e2e-label-title"
+                i18n="@@UID__fld_Message@dateReceived;message;message-view"
+              >
+                Date Received
+              </div>
+
+              <div class="label-value e2e-label-value label-field">
+                <span class="vp-label-text">{{
+                  data?.dateReceived | date: getDateFormat('', '')
+                }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-sm-12 col-md-6 col-lg-4 status p-0 pr-xs-0 pr-sm-0 pr-md-4 pr-lg-4"
+          >
+            <div class="vp-label label-container e2e-label-container" tabindex="0">
+              <div
+                class="label-title e2e-label-title"
+                i18n="@@UID__fld_Message@status;message;message-view"
+              >
+                Status
+              </div>
+
+              <div class="label-value e2e-label-value label-field">
+                <span class="vp-label-text">{{ data?.status }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  }
+  @if (!loading() && !(data$ | async)) {
+    <ng-template #bodyScreen>
+      <div i18n="message;msgNoDataFound">No data to display</div>
+    </ng-template>
+  }
+  <ng-template #footerActions>
+    <p-button
+      class="plm-button e2e-button style-cancel"
+      i18n-label="@@UID__act_back;message;message-view"
+      label="Back"
+      icon="pi pi-arrow-left"
+      iconPos="left"
+      ariaLabel="Back"
+      (onClick)="doBack()"
+    >
+    </p-button>
+  </ng-template>
+</app-screen>
+<!-- to display screens with navigation type 'dialog'-->
+<ng-template #dialogContainer></ng-template>
+
+<!-- to display screens with navigation type 'call'-->
+<ng-template #callContainer></ng-template>
